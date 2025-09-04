@@ -1,0 +1,87 @@
+@use "./helpers" as *;
+
+html {
+	&.is-lock {
+		overflow: hidden;
+	}
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	font-family: var(--font-family-base);
+	font-size: fluid(18, 14);
+	color: var(--color-gray-60);
+	background-color: var(--color-dark-08);
+}
+
+main {
+	flex-grow: 1;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	color: var(--color-white);
+}
+
+h1,
+.h1 {
+	font-family: var(--font-family-alt);
+	font-size: fluid(70, 30);
+	font-weight: 500;
+}
+
+h2,
+.h2 {
+	font-family: var(--font-family-alt);
+	font-size: fluid(58, 28);
+	font-weight: 500;
+}
+
+h3,
+.h3 {
+	font-family: var(--font-family-alt);
+	font-size: fluid(40, 24);
+	font-weight: 600;
+}
+
+h4,
+.h4 {
+	font-family: var(--font-family-base);
+	font-size: fluid(26, 18);
+	font-weight: 600;
+}
+
+h5,
+.h5 {
+	font-family: var(--font-family-base);
+	font-size: fluid(24, 18);
+	font-weight: 500;
+}
+
+h6,
+.h6 {
+	font-family: var(--font-family-base);
+	font-size: fluid(20, 16);
+	font-weight: 500;
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+	transition-duration: var(--transition-duration);
+}

@@ -1,0 +1,48 @@
+@font-face {
+	font-family: "Inter";
+	src:
+		local("Inter"),
+		url("@/app/fonts/Inter-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-size: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Inter";
+	src:
+		local("Inter"),
+		url("@/app/fonts/Inter-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-size: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Inter";
+	src:
+		local("Inter"),
+		url("@/app/fonts/Inter-SemiBold.woff2") format("woff2");
+	font-weight: 600;
+	font-size: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Inter";
+	src:
+		local("Inter"),
+		url("@/app/fonts/Inter-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-size: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Kumbh Sans";
+	src:
+		local("Kumbh Sans"),
+		url("@/app/fonts/Kumbh-Sans.woff2") format("woff2");
+	font-size: normal;
+	font-display: swap;
+}

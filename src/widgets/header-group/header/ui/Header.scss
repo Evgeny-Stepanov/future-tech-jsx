@@ -1,0 +1,12 @@
+@use "@/app/styles/helpers" as *;
+
+.header {
+	&__body {
+		padding-block: fluid-to-laptop(24, 20);
+	}
+
+	&__logo {
+		width: fluid(179, 126);
+		height: fluid(50, 35);
+	}
+}
