@@ -1,0 +1,19 @@
+@use "@/app/styles/helpers" as *;
+
+.header {
+	&__menu {
+		display: flex;
+		gap: fluid-to-laptop(16, 6);
+	}
+
+	&__link {
+		padding: fluid-to-laptop(14, 10) fluid-to-laptop(24, 18);
+
+		&--is-active {
+			color: var(--color-white);
+			background-color: var(--color-dark-08);
+			border: var(--border);
+			border-radius: var(--border-radius-m);
+		}
+	}
+}

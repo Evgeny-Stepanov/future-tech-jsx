@@ -1,8 +1,0 @@
-@use "@/app/styles/helpers" as *;
-
-.header {
-	&__preheader {
-		padding-block: fluid-to-laptop(20, 12);
-		text-align: center;
-	}
-}

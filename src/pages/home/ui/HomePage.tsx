@@ -1,9 +1,9 @@
-import { HeaderGroup } from "@/widgets/header-group";
+import { Header } from "@/widgets/header";
 
 export const HomePage = () => {
 	return (
 		<>
-			<HeaderGroup />
+			<Header />
 		</>
 	);
 };

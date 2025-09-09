@@ -1,20 +1,24 @@
 import "./LinkWithArrow.scss";
-import ArrowTopLeft from "./arrow-top-right.svg?react";
+import ArrowTopRight from "./arrow-top-right.svg?react";
 
-export const LinkWithArrow = props => {
-	const { children, href = "/" } = props;
+type LinkWithArrowProps = {
+	title: string;
+	href: string;
+};
 
+export const LinkWithArrow = ({ title, href }: LinkWithArrowProps) => {
 	return (
 		<a
 			href={href}
 			target="_blank"
-			className="link link--has-underline-animation"
+			className="link link--has-hover-animation"
 		>
-			{children}
-			<ArrowTopLeft
+			{title}
+			<ArrowTopRight
 				className="link__icon"
 				width={24}
 				height={24}
+				aria-hidden="true"
 			/>
 		</a>
 	);

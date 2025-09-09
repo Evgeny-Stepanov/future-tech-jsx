@@ -1,0 +1,6 @@
+@use "@/app/styles/helpers" as *;
+
+.header__intro {
+	padding-block: fluid-to-laptop(20, 12);
+	text-align: center;
+}
