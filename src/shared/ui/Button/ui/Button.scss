@@ -1,0 +1,50 @@
+@use "@/app/styles/helpers" as *;
+
+.button {
+	position: relative;
+	padding: fluid-to-laptop(13, 9) fluid-to-laptop(19, 13);
+	font-weight: 500;
+	color: var(--color-dark-08);
+	background-color: var(--color-yellow-55);
+	border: var(--border-width) solid var(--color-yellow-55);
+	border-radius: var(--border-radius-m);
+	overflow: hidden;
+	transition-duration: var(--transition-duration-longer);
+
+	@include laptop {
+		border-radius: var(--border-radius-s);
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		width: 100%;
+		height: 50%;
+		background-color: var(--color-yellow-55);
+		inset: auto auto 0px 0px;
+		opacity: 1;
+		transition-duration: var(--transition-duration-longer);
+	}
+
+	&::after {
+		inset: 0px auto auto 0px;
+	}
+
+	@include hover {
+		color: var(--color-yellow-55);
+		background-color: transparent;
+		transition-duration: var(--transition-duration-longer);
+
+		&::before {
+			width: 100%;
+			height: 0%;
+			opacity: 1;
+		}
+
+		&::after {
+			height: 0;
+		}
+	}
+}

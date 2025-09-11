@@ -1,7 +1,7 @@
 import "./HeaderMenu.scss";
-import { headerMenuItems } from "../model/headerMenuItems";
+import headerMenuItems from "../model/headerMenuItems";
 
-export const HeaderMenu = () => {
+const HeaderMenu = () => {
 	return (
 		<ul className="header__menu">
 			{headerMenuItems.map(({ title, href }) => (
@@ -20,3 +20,5 @@ export const HeaderMenu = () => {
 		</ul>
 	);
 };
+
+export default HeaderMenu;

@@ -1,1 +1,3 @@
-export { HeaderIntro } from "./ui/HeaderIntro";
+import HeaderIntro from "./ui/HeaderIntro";
+
+export default HeaderIntro;

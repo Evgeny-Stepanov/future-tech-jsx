@@ -1,4 +1,5 @@
 import "./LinkWithArrow.scss";
+import { type FC } from "react";
 import ArrowTopRight from "./arrow-top-right.svg?react";
 
 type LinkWithArrowProps = {
@@ -6,7 +7,7 @@ type LinkWithArrowProps = {
 	href: string;
 };
 
-export const LinkWithArrow = ({ title, href }: LinkWithArrowProps) => {
+const LinkWithArrow: FC<LinkWithArrowProps> = ({ title, href }) => {
 	return (
 		<a
 			href={href}
@@ -23,3 +24,5 @@ export const LinkWithArrow = ({ title, href }: LinkWithArrowProps) => {
 		</a>
 	);
 };
+
+export default LinkWithArrow;

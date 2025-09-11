@@ -1,7 +1,7 @@
-import { HeaderIntro } from "../header-intro";
-import { HeaderBody } from "../header-body";
+import HeaderIntro from "../header-intro";
+import HeaderBody from "../header-body";
 
-export const Header = () => {
+const Header = () => {
 	return (
 		<header className="header container">
 			<HeaderIntro />
@@ -9,3 +9,5 @@ export const Header = () => {
 		</header>
 	);
 };
+
+export default Header;

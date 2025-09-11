@@ -1,7 +1,7 @@
 import "./HeaderIntro.scss";
-import { LinkWithArrow } from "@/shared/ui/LinkWithArrow";
+import LinkWithArrow from "@/shared/ui/LinkWithArrow";
 
-export const HeaderIntro = () => {
+const HeaderIntro = () => {
 	return (
 		<div className="header__intro">
 			<LinkWithArrow
@@ -11,3 +11,5 @@ export const HeaderIntro = () => {
 		</div>
 	);
 };
+
+export default HeaderIntro;

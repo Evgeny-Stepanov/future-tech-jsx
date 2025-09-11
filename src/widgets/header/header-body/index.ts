@@ -1,1 +1,3 @@
-export { HeaderBody } from "./ui/HeaderBody";
+import HeaderBody from "./ui/HeaderBody";
+
+export default HeaderBody;

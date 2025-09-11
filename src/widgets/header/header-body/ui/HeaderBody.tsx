@@ -1,13 +1,14 @@
 import "./HeaderBody.scss";
-import { Button } from "@/shared/ui/Button";
-import { HeaderMenu } from "./HeaderMenu";
+import { type FC } from "react";
+import Button from "@/shared/ui/Button";
+import HeaderMenu from "./HeaderMenu";
 import LogoWithText from "./logo-with-text.svg?react";
 
 type HeaderProps = {
 	titleForLogoLink: string;
 };
 
-export const HeaderBody = ({ titleForLogoLink }: HeaderProps) => {
+const HeaderBody: FC<HeaderProps> = ({ titleForLogoLink }) => {
 	return (
 		<div className="header__body">
 			<a
@@ -26,9 +27,12 @@ export const HeaderBody = ({ titleForLogoLink }: HeaderProps) => {
 			<HeaderMenu />
 
 			<Button
+				mode="link"
+				href="/contact-us"
 				title="Contact Us"
-				type="button"
 			/>
 		</div>
 	);
 };
+
+export default HeaderBody;

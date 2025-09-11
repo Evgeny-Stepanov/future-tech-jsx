@@ -1,9 +1,9 @@
-type headerMenuItems = {
+type headerMenuItem = {
 	title: string;
 	href: string;
 };
 
-export const headerMenuItems: headerMenuItems[] = [
+const headerMenuItems: headerMenuItem[] = [
 	{
 		title: "Home",
 		href: "/",
@@ -21,3 +21,5 @@ export const headerMenuItems: headerMenuItems[] = [
 		href: "/",
 	},
 ];
+
+export default headerMenuItems;

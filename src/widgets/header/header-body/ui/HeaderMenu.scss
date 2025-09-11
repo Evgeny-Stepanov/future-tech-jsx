@@ -10,6 +10,7 @@
 		padding: fluid-to-laptop(14, 10) fluid-to-laptop(24, 18);
 
 		&--is-active {
+			font-weight: 500;
 			color: var(--color-white);
 			background-color: var(--color-dark-08);
 			border: var(--border);
