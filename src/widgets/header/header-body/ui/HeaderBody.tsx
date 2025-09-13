@@ -1,6 +1,7 @@
 import "./HeaderBody.scss";
+import "@/shared/ui/Button/ui/Button.scss";
 import { type FC } from "react";
-import Button from "@/shared/ui/Button";
+import { NavLink } from "react-router";
 import HeaderMenu from "./HeaderMenu";
 import LogoWithText from "./logo-with-text.svg?react";
 
@@ -11,8 +12,8 @@ type HeaderProps = {
 const HeaderBody: FC<HeaderProps> = ({ titleForLogoLink }) => {
 	return (
 		<div className="header__body">
-			<a
-				href="/"
+			<NavLink
+				to="/"
 				className="header__logo"
 				aria-label={titleForLogoLink}
 				title={titleForLogoLink}
@@ -22,15 +23,16 @@ const HeaderBody: FC<HeaderProps> = ({ titleForLogoLink }) => {
 					height={50}
 					aria-hidden="true"
 				/>
-			</a>
+			</NavLink>
 
 			<HeaderMenu />
 
-			<Button
-				mode="link"
-				href="/contact-us"
-				title="Contact Us"
-			/>
+			<NavLink
+				to="/contacts"
+				className="button"
+			>
+				Contact Us
+			</NavLink>
 		</div>
 	);
 };

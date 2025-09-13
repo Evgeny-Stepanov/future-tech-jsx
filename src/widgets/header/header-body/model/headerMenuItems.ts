@@ -1,24 +1,24 @@
 type headerMenuItem = {
 	title: string;
-	href: string;
+	path: string;
 };
 
 const headerMenuItems: headerMenuItem[] = [
 	{
 		title: "Home",
-		href: "/",
+		path: "/",
 	},
 	{
 		title: "News",
-		href: "/",
+		path: "/news",
 	},
 	{
 		title: "Podcasts",
-		href: "/",
+		path: "/podcasts",
 	},
 	{
 		title: "Resources",
-		href: "/",
+		path: "/resources",
 	},
 ];
 

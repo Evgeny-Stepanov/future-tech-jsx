@@ -1,7 +1,7 @@
 @use "@/app/styles/helpers" as *;
 
 .header {
-	&__menu {
+	&__list {
 		display: flex;
 		gap: fluid-to-laptop(16, 6);
 	}

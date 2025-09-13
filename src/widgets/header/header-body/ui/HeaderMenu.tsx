@@ -1,23 +1,26 @@
 import "./HeaderMenu.scss";
+import { NavLink } from "react-router";
 import headerMenuItems from "../model/headerMenuItems";
 
 const HeaderMenu = () => {
 	return (
-		<ul className="header__menu">
-			{headerMenuItems.map(({ title, href }) => (
-				<li
-					className="header__item"
-					key={title}
-				>
-					<a
-						href={href}
-						className="header__link"
+		<nav>
+			<ul className="header__list">
+				{headerMenuItems.map(({ title, path }) => (
+					<li
+						className="header__item"
+						key={title}
 					>
-						{title}
-					</a>
-				</li>
-			))}
-		</ul>
+						<NavLink
+							to={path}
+							className="header__link"
+						>
+							{title}
+						</NavLink>
+					</li>
+				))}
+			</ul>
+		</nav>
 	);
 };
 
