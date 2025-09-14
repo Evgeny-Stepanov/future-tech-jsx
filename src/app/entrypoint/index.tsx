@@ -2,6 +2,7 @@ import "@/app/styles";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
+import Root from "@/pages/root";
 import HomePage from "@/pages/home";
 import NewsPage from "@/pages/news";
 import PodcastsPage from "@/pages/podcasts";
@@ -14,24 +15,29 @@ createRoot(document.getElementById("root")!).render(
 			<Routes>
 				<Route
 					path="/"
-					element={<HomePage />}
-				/>
-				<Route
-					path="/news"
-					element={<NewsPage />}
-				/>
-				<Route
-					path="/podcasts"
-					element={<PodcastsPage />}
-				/>
-				<Route
-					path="/resources"
-					element={<ResourcesPage />}
-				/>
-				<Route
-					path="/contacts"
-					element={<ContactsPage />}
-				/>
+					element={<Root />}
+				>
+					<Route
+						index
+						element={<HomePage />}
+					/>
+					<Route
+						path="/news"
+						element={<NewsPage />}
+					/>
+					<Route
+						path="/podcasts"
+						element={<PodcastsPage />}
+					/>
+					<Route
+						path="/resources"
+						element={<ResourcesPage />}
+					/>
+					<Route
+						path="/contacts"
+						element={<ContactsPage />}
+					/>
+				</Route>
 			</Routes>
 		</BrowserRouter>
 	</StrictMode>

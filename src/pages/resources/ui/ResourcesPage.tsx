@@ -1,10 +1,9 @@
-import Header from "@/widgets/header";
+import TextPlaceholder from "@/shared/ui/TextPlaceholder";
 
 const ResourcesPage = () => {
 	return (
 		<>
-			<Header />
-			<h1>Resources page</h1>
+			<TextPlaceholder />
 		</>
 	);
 };

@@ -1,10 +1,9 @@
-import Header from "@/widgets/header";
+import TextPlaceholder from "@/shared/ui/TextPlaceholder";
 
 const NewsPage = () => {
 	return (
 		<>
-			<Header />
-			<h1>News page</h1>
+			<TextPlaceholder />
 		</>
 	);
 };

@@ -1,10 +1,9 @@
-import Header from "@/widgets/header";
+import TextPlaceholder from "@/shared/ui/TextPlaceholder";
 
 const PodcastsPage = () => {
 	return (
 		<>
-			<Header />
-			<h1>Podcasts page</h1>
+			<TextPlaceholder />
 		</>
 	);
 };

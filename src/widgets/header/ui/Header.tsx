@@ -3,7 +3,7 @@ import HeaderBody from "../header-body";
 
 const Header = () => {
 	return (
-		<header className="header container">
+		<header className="header">
 			<HeaderIntro />
 			<HeaderBody titleForLogoLink="Перейти на домашнюю страницу" />
 		</header>
