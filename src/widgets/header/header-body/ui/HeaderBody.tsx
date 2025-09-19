@@ -1,20 +1,55 @@
 import "./HeaderBody.scss";
 import "@/shared/ui/Button/ui/Button.scss";
-import { type FC } from "react";
 import { NavLink } from "react-router";
-import HeaderMenu from "./HeaderMenu";
+import { type FC } from "react";
+import HeaderDesktopMenu from "./HeaderDesktopMenu";
+import HeaderMenuMobile from "./HeaderMobileMenu";
 import LogoWithText from "./logo-with-text.svg?react";
+import BurgerButton from "./burger-button.svg?react";
+import classNames from "classnames";
 
-type HeaderProps = {
-	titleForLogoLink: string;
+type ContactsButtonProps = {
+	isVisibleInMobileMenu?: true;
 };
 
-const HeaderBody: FC<HeaderProps> = ({ titleForLogoLink }) => {
+const ContactsButton: FC<ContactsButtonProps> = ({ isVisibleInMobileMenu }) => (
+	<NavLink
+		to="/contacts"
+		className={({ isActive }) =>
+			isActive
+				? classNames("button", "button--is-active", {
+						"hidden-mobile": !isVisibleInMobileMenu,
+					})
+				: classNames("button", {
+						"hidden-mobile": !isVisibleInMobileMenu,
+					})
+		}
+	>
+		Contact Us
+	</NavLink>
+);
+
+const HeaderBody = () => {
+	const titleForLogoLink = "Перейти на домашнюю страницу";
+	const titleForBurgerButton = "Открыть меню";
+
+	const handleClick = () => {
+		const mobileMenuWrapper = document.querySelector(
+			".header__mobile-menu-wrapper"
+		) as HTMLDialogElement;
+
+		mobileMenuWrapper.showModal();
+	};
+
 	return (
 		<div className="header__body">
 			<NavLink
 				to="/"
-				className="header__logo"
+				className={({ isActive }) =>
+					isActive
+						? classNames("header__logo", "header__logo--is-active")
+						: "header__logo"
+				}
 				aria-label={titleForLogoLink}
 				title={titleForLogoLink}
 			>
@@ -25,16 +60,25 @@ const HeaderBody: FC<HeaderProps> = ({ titleForLogoLink }) => {
 				/>
 			</NavLink>
 
-			<HeaderMenu />
+			<HeaderDesktopMenu classNamesForNav="header__desktop-menu hidden-mobile" />
 
-			<NavLink
-				to="/contacts"
-				className="button"
+			<HeaderMenuMobile />
+
+			<ContactsButton />
+
+			<button
+				className="header__burger-button visible-mobile"
+				onClick={handleClick}
 			>
-				Contact Us
-			</NavLink>
+				<BurgerButton
+					width={34}
+					height={34}
+					aria-label={titleForBurgerButton}
+				/>
+			</button>
 		</div>
 	);
 };
 
+export { ContactsButton };
 export default HeaderBody;

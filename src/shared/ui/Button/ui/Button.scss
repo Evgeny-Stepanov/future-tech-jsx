@@ -9,6 +9,7 @@
 	border: var(--border-width) solid var(--color-yellow-55);
 	border-radius: var(--border-radius-m);
 	overflow: hidden;
+	user-select: none;
 	transition-duration: var(--transition-duration-longer);
 
 	@include laptop {

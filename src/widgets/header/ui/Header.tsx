@@ -5,7 +5,7 @@ const Header = () => {
 	return (
 		<header className="header">
 			<HeaderIntro />
-			<HeaderBody titleForLogoLink="Перейти на домашнюю страницу" />
+			<HeaderBody />
 		</header>
 	);
 };

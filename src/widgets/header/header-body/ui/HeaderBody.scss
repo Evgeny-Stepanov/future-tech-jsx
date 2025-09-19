@@ -13,14 +13,21 @@
 			top: 0;
 			left: -50vw;
 			z-index: -1;
-			width: 150vw;
+			width: 200vw;
 			height: 100%;
 			background-color: var(--color-dark-10);
+			background-color: blue;
 		}
 	}
 
 	&__logo {
 		width: fluid(179, 126);
 		height: fluid(50, 35);
+	}
+
+	&__burger-button {
+		width: fluid(68, 34);
+		height: fluid(68, 34);
+		background-color: var(--color-dark-10);
 	}
 }

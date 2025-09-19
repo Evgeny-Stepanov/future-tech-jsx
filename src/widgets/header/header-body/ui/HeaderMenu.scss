@@ -8,13 +8,14 @@
 
 	&__link {
 		padding: fluid-to-laptop(14, 10) fluid-to-laptop(24, 18);
+		border: var(--border-width) solid transparent;
+		border-radius: var(--border-radius-m);
+		user-select: none;
 
 		&--is-active {
-			font-weight: 500;
 			color: var(--color-white);
 			background-color: var(--color-dark-08);
-			border: var(--border);
-			border-radius: var(--border-radius-m);
+			border-color: var(--color-dark-15);
 		}
 	}
 }

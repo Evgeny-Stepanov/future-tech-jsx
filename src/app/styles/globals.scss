@@ -1,11 +1,5 @@
 @use "./helpers" as *;
 
-html {
-	&.is-lock {
-		overflow: hidden;
-	}
-}
-
 body {
 	display: flex;
 	flex-direction: column;
@@ -14,7 +8,10 @@ body {
 	font-size: fluid(18, 14);
 	color: var(--color-gray-60);
 	background-color: var(--color-dark-08);
-	overflow-x: hidden;
+
+	&:has(dialog[open]) {
+		overflow: hidden;
+	}
 }
 
 main {

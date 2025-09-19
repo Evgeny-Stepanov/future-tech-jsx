@@ -8,7 +8,7 @@ type ButtonProps = {
 	title: string;
 };
 
-const Button: FC<ButtonProps> = props => {
+const Button: FC<ButtonProps> = (props) => {
 	const { mode, href, type, title } = props;
 
 	const Link = (
