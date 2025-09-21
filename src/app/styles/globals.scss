@@ -84,3 +84,7 @@ select,
 svg * {
 	transition-duration: var(--transition-duration);
 }
+
+#root {
+	overflow-x: hidden;
+}

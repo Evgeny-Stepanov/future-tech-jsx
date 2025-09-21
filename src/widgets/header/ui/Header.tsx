@@ -3,7 +3,7 @@ import HeaderBody from "../header-body";
 
 const Header = () => {
 	return (
-		<header className="header">
+		<header className="header container">
 			<HeaderIntro />
 			<HeaderBody />
 		</header>

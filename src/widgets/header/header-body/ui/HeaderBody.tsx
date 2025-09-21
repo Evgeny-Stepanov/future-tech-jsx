@@ -5,8 +5,8 @@ import { type FC } from "react";
 import HeaderDesktopMenu from "./HeaderDesktopMenu";
 import HeaderMenuMobile from "./HeaderMobileMenu";
 import LogoWithText from "./logo-with-text.svg?react";
-import BurgerButton from "./burger-button.svg?react";
 import classNames from "classnames";
+import toggleMobileMenu from "../model/toggleMobileMenu";
 
 type ContactsButtonProps = {
 	isVisibleInMobileMenu?: true;
@@ -32,14 +32,6 @@ const ContactsButton: FC<ContactsButtonProps> = ({ isVisibleInMobileMenu }) => (
 const HeaderBody = () => {
 	const titleForLogoLink = "Перейти на домашнюю страницу";
 	const titleForBurgerButton = "Открыть меню";
-
-	const handleClick = () => {
-		const mobileMenuWrapper = document.querySelector(
-			".header__mobile-menu-wrapper"
-		) as HTMLDialogElement;
-
-		mobileMenuWrapper.showModal();
-	};
 
 	return (
 		<div className="header__body">
@@ -68,13 +60,14 @@ const HeaderBody = () => {
 
 			<button
 				className="header__burger-button visible-mobile"
-				onClick={handleClick}
+				aria-label={titleForBurgerButton}
+				onClick={toggleMobileMenu}
 			>
-				<BurgerButton
-					width={34}
-					height={34}
-					aria-label={titleForBurgerButton}
-				/>
+				<div>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
 			</button>
 		</div>
 	);

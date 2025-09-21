@@ -7,7 +7,6 @@ const HeaderMenuMobile = () => {
 		<dialog className="header__mobile-menu-wrapper visible-mobile">
 			<HeaderDesktopMenu classNamesForNav="header__mobile-menu" />
 			<ContactsButton isVisibleInMobileMenu />
-			<button type="button">X</button>
 		</dialog>
 	);
 };
