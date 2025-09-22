@@ -5,12 +5,10 @@
 	padding: fluid-to-laptop(13, 9) fluid-to-laptop(19, 13);
 	font-weight: 500;
 	color: var(--color-dark-08);
-	background-color: var(--color-yellow-55);
 	border: var(--border-width) solid var(--color-yellow-55);
 	border-radius: var(--border-radius-m);
 	overflow: hidden;
 	user-select: none;
-	transition-duration: var(--transition-duration-longer);
 
 	@include laptop {
 		border-radius: var(--border-radius-s);
@@ -26,7 +24,7 @@
 		background-color: var(--color-yellow-55);
 		inset: auto auto 0px 0px;
 		opacity: 1;
-		transition-duration: var(--transition-duration-longer);
+		transition-duration: var(--transition-duration);
 	}
 
 	&::after {
@@ -36,7 +34,7 @@
 	@include hover {
 		color: var(--color-yellow-55);
 		background-color: transparent;
-		transition-duration: var(--transition-duration-longer);
+		transition-duration: var(--transition-duration);
 
 		&::before {
 			width: 100%;

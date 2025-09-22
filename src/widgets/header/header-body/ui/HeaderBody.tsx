@@ -3,10 +3,10 @@ import "@/shared/ui/Button/ui/Button.scss";
 import { NavLink } from "react-router";
 import { type FC } from "react";
 import HeaderDesktopMenu from "./HeaderDesktopMenu";
-import HeaderMenuMobile from "./HeaderMobileMenu";
+import HeaderMobileMenu from "./HeaderMobileMenu";
 import LogoWithText from "./logo-with-text.svg?react";
 import classNames from "classnames";
-import toggleMobileMenu from "../model/toggleMobileMenu";
+import openMobileMenu from "../model/openMobileMenu";
 
 type ContactsButtonProps = {
 	isVisibleInMobileMenu?: true;
@@ -54,14 +54,15 @@ const HeaderBody = () => {
 
 			<HeaderDesktopMenu classNamesForNav="header__desktop-menu hidden-mobile" />
 
-			<HeaderMenuMobile />
+			<HeaderMobileMenu />
 
 			<ContactsButton />
 
 			<button
 				className="header__burger-button visible-mobile"
 				aria-label={titleForBurgerButton}
-				onClick={toggleMobileMenu}
+				onClick={openMobileMenu}
+				type="button"
 			>
 				<div>
 					<span></span>

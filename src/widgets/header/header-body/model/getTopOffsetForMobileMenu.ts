@@ -1,6 +1,6 @@
 const getTopOffsetForMobileMenu = (mobileMenuWrapper: HTMLDialogElement) => {
 	const parentOfMobileMenuWrapper =
-		mobileMenuWrapper.parentElement as HTMLElement;
+		mobileMenuWrapper.parentElement as HTMLDivElement;
 	const offsetTopOfParentOfMobileMenuWrapper =
 		parentOfMobileMenuWrapper.offsetTop;
 	const offsetHeightOfParentOfMobileMenuWrapper =
