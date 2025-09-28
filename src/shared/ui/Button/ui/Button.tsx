@@ -3,14 +3,12 @@ import { type FC } from "react";
 
 type ButtonProps = {
 	mode: "link" | "button";
-	href?: string;
-	type?: "button" | "submit";
 	title: string;
+	type?: "button" | "submit";
+	href?: string;
 };
 
-const Button: FC<ButtonProps> = (props) => {
-	const { mode, href, type, title } = props;
-
+const Button: FC<ButtonProps> = ({ mode, title, type, href }) => {
 	const Link = (
 		<a
 			className="button"
@@ -19,6 +17,7 @@ const Button: FC<ButtonProps> = (props) => {
 			{title}
 		</a>
 	);
+
 	const Button = (
 		<button
 			className="button"

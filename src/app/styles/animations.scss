@@ -1,0 +1,29 @@
+.fade-in-left {
+	animation-name: fade-in-left;
+	animation-duration: var(--transition-duration-longer);
+}
+
+.fade-in-right {
+	animation-name: fade-in-right;
+	animation-duration: var(--transition-duration-longer);
+}
+
+@keyframes fade-in-left {
+	from {
+		left: -150%;
+	}
+
+	to {
+		left: 0;
+	}
+}
+
+@keyframes fade-in-right {
+	from {
+		left: 0;
+	}
+
+	to {
+		left: -150%;
+	}
+}

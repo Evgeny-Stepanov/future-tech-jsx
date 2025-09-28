@@ -1,37 +1,28 @@
 import "./HeaderBody.scss";
-import "@/shared/ui/Button/ui/Button.scss";
 import { NavLink } from "react-router";
-import { type FC } from "react";
+import classNames from "classnames";
+import "@/shared/ui/Button/ui/Button.scss";
 import HeaderDesktopMenu from "./HeaderDesktopMenu";
 import HeaderMobileMenu from "./HeaderMobileMenu";
+import ContactsButton from "./ContactsButton";
 import LogoWithText from "./logo-with-text.svg?react";
-import classNames from "classnames";
 import openMobileMenu from "../model/openMobileMenu";
-
-type ContactsButtonProps = {
-	isVisibleInMobileMenu?: true;
-};
-
-const ContactsButton: FC<ContactsButtonProps> = ({ isVisibleInMobileMenu }) => (
-	<NavLink
-		to="/contacts"
-		className={({ isActive }) =>
-			isActive
-				? classNames("button", "button--is-active", {
-						"hidden-mobile": !isVisibleInMobileMenu,
-					})
-				: classNames("button", {
-						"hidden-mobile": !isVisibleInMobileMenu,
-					})
-		}
-	>
-		Contact Us
-	</NavLink>
-);
+import { useState } from "react";
+//import closeMobileMenu from "../model/closeMobileMenu";
 
 const HeaderBody = () => {
 	const titleForLogoLink = "Перейти на домашнюю страницу";
 	const titleForBurgerButton = "Открыть меню";
+
+	const [visibilityMobileMenu, setVisibilityMobileMenu] = useState(false);
+
+	const toggleVisibilityMobileMenu = () => {
+		setVisibilityMobileMenu(!visibilityMobileMenu);
+	};
+
+	if (visibilityMobileMenu) {
+		openMobileMenu(toggleVisibilityMobileMenu);
+	}
 
 	return (
 		<div className="header__body">
@@ -52,17 +43,15 @@ const HeaderBody = () => {
 				/>
 			</NavLink>
 
-			<HeaderDesktopMenu classNamesForNav="header__desktop-menu hidden-mobile" />
-
-			<HeaderMobileMenu />
+			<HeaderDesktopMenu classNamesForNavBar="header__desktop-menu hidden-mobile" />
 
 			<ContactsButton />
 
 			<button
 				className="header__burger-button visible-mobile"
-				aria-label={titleForBurgerButton}
-				onClick={openMobileMenu}
 				type="button"
+				aria-label={titleForBurgerButton}
+				onClick={toggleVisibilityMobileMenu}
 			>
 				<div>
 					<span></span>
@@ -70,9 +59,10 @@ const HeaderBody = () => {
 					<span></span>
 				</div>
 			</button>
+
+			<HeaderMobileMenu />
 		</div>
 	);
 };
 
-export { ContactsButton };
 export default HeaderBody;

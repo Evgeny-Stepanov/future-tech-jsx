@@ -1,18 +1,18 @@
 import "./HeaderMenu.scss";
 import { NavLink } from "react-router";
 import { type FC } from "react";
-import headerMenuItems from "../model/headerMenuItems";
 import classNames from "classnames";
+import headerMenuItems from "../model/headerMenuItems";
 
 type HeaderDesktopMenuProps = {
-	classNamesForNav: string;
+	classNamesForNavBar: string;
 };
 
 const HeaderDesktopMenu: FC<HeaderDesktopMenuProps> = ({
-	classNamesForNav,
+	classNamesForNavBar,
 }) => {
 	return (
-		<nav className={classNamesForNav}>
+		<nav className={classNamesForNavBar}>
 			<ul className="header__list">
 				{headerMenuItems.map(({ title, path }) => (
 					<li
