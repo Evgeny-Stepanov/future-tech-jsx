@@ -24,17 +24,44 @@
 		height: fluid(50, 35);
 	}
 
-	&__mobile-menu-wrapper {
+	&__list {
+		display: flex;
+		gap: fluid-to-laptop(16, 6);
+	}
+
+	&__link {
+		padding: fluid-to-laptop(14, 10) fluid-to-laptop(24, 18);
+		border: var(--border-width) solid transparent;
+		border-radius: var(--border-radius-m);
+		user-select: none;
+
+		&--is-current {
+			color: var(--color-white);
+			background-color: var(--color-dark-08);
+			border-color: var(--color-dark-15);
+		}
+
+		&:not(.header__link--is-current) {
+			@include hover {
+				color: var(--color-dark-08);
+				background-color: var(--color-yellow-55);
+				border-color: var(--color-yellow-55);
+			}
+		}
+	}
+
+	&__mobile-menu {
 		display: none;
 		width: 100vw;
 		max-width: 100vw;
+		max-height: 100vh;
 		height: 100vh;
 		margin: 0;
 		padding: 0;
-		background-color: var(--color-dark-25);
+		background-color: transparent;
 		border: none;
 
-		&--is-active {
+		&--is-open {
 			display: flex;
 		}
 
@@ -42,39 +69,27 @@
 			background-color: transparent;
 		}
 
-		div {
+		> div {
 			padding: fluid(100, 50) 0 0 0;
 			width: 100%;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			gap: 20px;
+			background-color: var(--color-dark-25);
 		}
-	}
 
-	&__burger-button {
-		width: fluid(68, 34);
-		height: fluid(68, 34);
-		padding: 8px 5px;
-		background-color: var(--color-dark-10);
-
-		div {
-			display: flex;
+		ul {
 			flex-direction: column;
-			justify-content: space-between;
-			align-items: end;
-			height: 100%;
+			align-items: center;
+			gap: 20px;
+			color: white;
+		}
 
-			span {
-				width: 100%;
-				height: 2px;
-				background-color: var(--color-white);
-				border-radius: 10px;
-
-				&:last-child {
-					width: 55%;
-				}
-			}
+		button {
+			position: absolute;
+			top: 66px;
+			right: 13px;
 		}
 	}
 }

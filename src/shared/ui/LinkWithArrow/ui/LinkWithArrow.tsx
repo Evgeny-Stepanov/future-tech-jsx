@@ -1,6 +1,6 @@
 import "./LinkWithArrow.scss";
 import { type FC } from "react";
-import ArrowTopRight from "./arrow-top-right.svg?react";
+import ArrowTopRightSVG from "./arrow-top-right.svg?react";
 
 type LinkWithArrowProps = {
 	title: string;
@@ -15,7 +15,7 @@ const LinkWithArrow: FC<LinkWithArrowProps> = ({ title, href }) => {
 			className="link link--has-hover-animation"
 		>
 			{title}
-			<ArrowTopRight
+			<ArrowTopRightSVG
 				className="link__icon"
 				width={24}
 				height={24}

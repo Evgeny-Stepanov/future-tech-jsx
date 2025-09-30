@@ -1,11 +1,11 @@
-import "./TextPlaceholder.scss";
+import "./PlaceholderText.scss";
 
-const TextPlaceholder = () => {
+const PlaceholderText = () => {
 	return (
-		<h1 className="text-placeholder h4">
+		<h1 className="placeholder-text h4">
 			В проекте реализованы только домашняя страница и страница контактов
 		</h1>
 	);
 };
 
-export default TextPlaceholder;
+export default PlaceholderText;

@@ -1,9 +1,9 @@
-import TextPlaceholder from "@/shared/ui/TextPlaceholder";
+import PlaceholderText from "@/shared/ui/PlaceholderText";
 
 const NewsPage = () => {
 	return (
 		<>
-			<TextPlaceholder />
+			<PlaceholderText />
 		</>
 	);
 };

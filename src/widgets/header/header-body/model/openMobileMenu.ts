@@ -1,27 +1,22 @@
-import getTopOffsetForMobileMenuWrapper from "./getTopOffsetForMobileMenuWrapper";
-import closeMobileMenu from "./closeMobileMenu";
+import getTopOffsetOfMobileMenu from "./getTopOffsetOfMobileMenu";
+import focusTrapInMobileMenu from "./focusTrapInMobileMenu";
 
-const openMobileMenu = (toggleVisibilityMobileMenu: () => void) => {
-	const mobileMenuWrapper = document.querySelector(
-		".header__mobile-menu-wrapper"
+const openMobileMenu = () => {
+	const mobileMenu = document.querySelector(
+		".header__mobile-menu"
 	) as HTMLDialogElement;
 	const burgerButton = document.querySelector(
-		".header__burger-button"
+		".burger-button"
 	) as HTMLButtonElement;
 
-	const offsetTop = getTopOffsetForMobileMenuWrapper(mobileMenuWrapper);
+	const topOffset = getTopOffsetOfMobileMenu(mobileMenu);
+	mobileMenu.querySelector("div")!.style.marginTop = topOffset;
 
-	mobileMenuWrapper.style.top = offsetTop;
+	burgerButton.classList.add("burger-button--is-active");
+	mobileMenu.classList.add("header__mobile-menu--is-open", "fade-in-left");
 
-	burgerButton.classList.add("header__burger-button--is-active");
-	mobileMenuWrapper.classList.add(
-		"header__mobile-menu-wrapper--is-active",
-		"fade-in-left"
-	);
-
-	mobileMenuWrapper.showModal();
-
-	closeMobileMenu(mobileMenuWrapper, burgerButton, toggleVisibilityMobileMenu);
+	mobileMenu.showModal();
+	focusTrapInMobileMenu(mobileMenu);
 };
 
 export default openMobileMenu;

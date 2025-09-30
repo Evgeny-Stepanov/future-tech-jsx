@@ -11,7 +11,7 @@ const ContactsButton: FC<ContactsButtonProps> = ({ isVisibleInMobileMenu }) => (
 		to="/contacts"
 		className={({ isActive }) =>
 			isActive
-				? classNames("button", "button--is-active", {
+				? classNames("button", "button--is-current", {
 						"hidden-mobile": !isVisibleInMobileMenu,
 					})
 				: classNames("button", {
