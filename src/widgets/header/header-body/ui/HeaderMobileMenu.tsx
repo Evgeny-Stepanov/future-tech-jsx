@@ -5,19 +5,12 @@ import BurgerButton from "./BurgerButton";
 const HeaderMobileMenu = () => {
 	const titleForBurgerButton = "Закрыть меню";
 
-	const handleBurgerButtonClick = () => {
-		console.log("it's okay");
-	};
-
 	return (
 		<dialog className="header__mobile-menu">
 			<div>
 				<HeaderDesktopMenu />
 				<ContactsButton isVisibleInMobileMenu />
-				<BurgerButton
-					title={titleForBurgerButton}
-					onBurgerButtonClick={handleBurgerButtonClick}
-				/>
+				<BurgerButton title={titleForBurgerButton} />
 			</div>
 		</dialog>
 	);

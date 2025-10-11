@@ -1,6 +1,5 @@
 import "./HeaderBody.scss";
 import { NavLink } from "react-router";
-import { useState } from "react";
 import classNames from "classnames";
 import "@/shared/ui/Button/ui/Button.scss";
 import HeaderDesktopMenu from "./HeaderDesktopMenu";
@@ -9,21 +8,10 @@ import ContactsButton from "./ContactsButton";
 import BurgerButton from "./BurgerButton";
 import LogoWithTextSVG from "./logo-with-text.svg?react";
 import openMobileMenu from "../model/openMobileMenu";
-//import closeMobileMenu from "../model/closeMobileMenu";
 
 const HeaderBody = () => {
-	const [visibilityMobileMenu, setVisibilityMobileMenu] = useState(false);
-
 	const titleForLogoLink = "Перейти на домашнюю страницу";
 	const titleForBurgerButton = "Открыть меню";
-
-	const handleBurgerButtonClick = () => {
-		setVisibilityMobileMenu(true);
-	};
-
-	if (visibilityMobileMenu) {
-		openMobileMenu();
-	}
 
 	return (
 		<div className="header__body">
@@ -51,7 +39,7 @@ const HeaderBody = () => {
 			<BurgerButton
 				title={titleForBurgerButton}
 				className="visible-mobile"
-				onBurgerButtonClick={handleBurgerButtonClick}
+				onBurgerButtonClick={openMobileMenu}
 			/>
 
 			<HeaderMobileMenu />

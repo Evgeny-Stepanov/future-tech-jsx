@@ -51,31 +51,25 @@
 	}
 
 	&__mobile-menu {
-		display: none;
 		width: 100vw;
 		max-width: 100vw;
 		max-height: 100vh;
 		height: 100vh;
 		margin: 0;
 		padding: 0;
-		background-color: transparent;
+		background-color: var(--color-dark-25);
 		border: none;
-
-		&--is-open {
-			display: flex;
-		}
 
 		&::backdrop {
 			background-color: transparent;
 		}
 
 		> div {
-			padding: fluid(100, 50) 0 0 0;
-			width: 100%;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			gap: 20px;
+			padding-block: fluid(50, 25);
 			background-color: var(--color-dark-25);
 		}
 
@@ -87,9 +81,8 @@
 		}
 
 		button {
-			position: absolute;
-			top: 66px;
-			right: 13px;
+			position: fixed;
+			background-color: transparent;
 		}
 	}
 }

@@ -5,7 +5,7 @@ import classNames from "classnames";
 type BurgerButtonProps = {
 	title: string;
 	className?: string;
-	onBurgerButtonClick: React.MouseEventHandler<HTMLButtonElement>;
+	onBurgerButtonClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 
 const BurgerButton: FC<BurgerButtonProps> = ({

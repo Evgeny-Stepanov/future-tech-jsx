@@ -1,13 +1,17 @@
+type FocusableElement = HTMLLinkElement | HTMLButtonElement;
+
 const focusTrapInMobileMenu = (mobileMenu: HTMLDialogElement) => {
 	const focusableElements = mobileMenu.querySelectorAll("a, button");
-	const firstFocusableElement = focusableElements[0] as
-		| HTMLLinkElement
-		| HTMLButtonElement;
+	const firstFocusableElement = focusableElements[0] as FocusableElement;
 	const lastFocusableElement = focusableElements[
 		focusableElements.length - 1
-	] as HTMLLinkElement | HTMLButtonElement;
+	] as FocusableElement;
 
-	mobileMenu.addEventListener("keydown", (event) => {
+	const handleKeyDown = (
+		event: KeyboardEvent,
+		firstFocusableElement: FocusableElement,
+		lastFocusableElement: FocusableElement
+	) => {
 		const isTabPressed = event.key === "Tab" || event.code === "Tab";
 
 		if (!isTabPressed) {
@@ -25,7 +29,11 @@ const focusTrapInMobileMenu = (mobileMenu: HTMLDialogElement) => {
 				event.preventDefault();
 			}
 		}
-	});
+	};
+
+	mobileMenu.onkeydown = (event) => {
+		handleKeyDown(event, firstFocusableElement, lastFocusableElement);
+	};
 };
 
 export default focusTrapInMobileMenu;
