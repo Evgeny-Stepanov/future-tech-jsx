@@ -1,22 +1,24 @@
 @use "@/app/styles/helpers" as *;
 
 .header {
-	&__body {
-		position: relative;
-		display: flex;
-		justify-content: space-between;
-		padding-block: fluid-to-laptop(24, 20);
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+	padding-block: fluid-to-laptop(24, 20);
 
-		&::before {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: -50vw;
-			z-index: -1;
-			width: 150vw;
-			height: 100%;
-			background-color: var(--color-dark-10);
-		}
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		display: block;
+		width: 100vw;
+		height: 100%;
+		margin-left: calc((100% - 100vw) / 2);
+		background-color: var(--color-dark-10);
 	}
 
 	&__logo {
@@ -26,6 +28,8 @@
 
 	&__list {
 		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
 		gap: fluid-to-laptop(16, 6);
 	}
 

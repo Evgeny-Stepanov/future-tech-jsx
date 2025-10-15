@@ -1,5 +1,3 @@
-import getCSSRootVariableValue from "@/shared/utils/getCSSRootVariableValue";
-
 const getTopAndLeftOffsetOfMobileMenuCloseButton = (
 	burgerButton: HTMLButtonElement
 ) => {
@@ -10,12 +8,7 @@ const getTopAndLeftOffsetOfMobileMenuCloseButton = (
 	const topOffsetOfMobileMenuCloseButton =
 		topOffsetOfBurgerButtonParent + topOffsetOfBurgerButton;
 
-	const leftOffsetOfBurgerButton = burgerButton.offsetLeft;
-	const leftPaddingOfContainer = parseFloat(
-		getCSSRootVariableValue("--container-padding-x")
-	);
-	const leftOffsetOfMobileMenuCloseButton =
-		leftOffsetOfBurgerButton + leftPaddingOfContainer;
+	const leftOffsetOfMobileMenuCloseButton = burgerButton.offsetLeft;
 
 	return [
 		`${topOffsetOfMobileMenuCloseButton}px`,

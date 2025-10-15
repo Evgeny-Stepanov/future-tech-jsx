@@ -1,0 +1,71 @@
+@use "@/app/styles/helpers" as *;
+
+.section {
+	&__header {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-template-rows: repeat(3, max-content);
+		align-items: center;
+	}
+
+	&__logo {
+		@include square(fluid(150, 60));
+
+		grid-row: 1 / 4;
+		margin-right: fluid-to-laptop(80, 60);
+
+		@include tablet {
+			margin-right: 45px;
+		}
+
+		@include mobile {
+			grid-row: 1 / 2;
+			margin-right: 30px;
+		}
+
+		@include mobile-s {
+			margin-right: 20px;
+		}
+	}
+
+	&__pre-title {
+		width: fit-content;
+		padding: fluid-to-laptop(6, 4) fluid-to-laptop(10, 8);
+		font-size: fluid(20, 14);
+		font-weight: 500;
+		color: var(--color-white);
+		background-color: var(--color-dark-20);
+		border-radius: var(--border-radius-xs);
+	}
+
+	&__title {
+		margin-top: fluid-to-laptop(16, 10);
+		font-family: var(--font-family-alt);
+
+		@include mobile {
+			grid-column: 1 / 3;
+		}
+
+		@include mobile-s {
+			margin-top: 20px;
+		}
+	}
+
+	&__description {
+		margin-top: fluid-to-laptop(30, 20);
+		color: var(--color-gray-50);
+
+		@include tablet {
+			margin-top: 14px;
+		}
+
+		@include mobile {
+			grid-column: 1 / 3;
+			margin-top: 8px;
+		}
+
+		@include mobile-s {
+			margin-top: 4px;
+		}
+	}
+}

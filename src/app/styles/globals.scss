@@ -1,21 +1,32 @@
 @use "./helpers" as *;
 
 body {
-	display: flex;
-	flex-direction: column;
+	height: 100%;
 	font-family: var(--font-family-base);
 	font-weight: 400;
 	font-size: fluid(18, 14);
 	color: var(--color-gray-60);
 	background-color: var(--color-dark-08);
+	overflow-x: hidden;
 
 	&:has(dialog[open]) {
-		overflow: hidden;
+		overflow-x: hidden;
 	}
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 }
 
 main {
 	flex-grow: 1;
+}
+
+section {
+	padding-top: var(--section-padding-top);
+	padding-bottom: var(--section-padding-bottom);
 }
 
 h1,
@@ -83,8 +94,4 @@ textarea,
 select,
 svg * {
 	transition-duration: var(--transition-duration);
-}
-
-#root {
-	overflow-x: hidden;
 }

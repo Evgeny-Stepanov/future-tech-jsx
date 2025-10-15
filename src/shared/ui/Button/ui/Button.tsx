@@ -2,23 +2,12 @@ import "./Button.scss";
 import { type FC } from "react";
 
 type ButtonProps = {
-	mode: "link" | "button";
 	title: string;
-	type?: "button" | "submit";
-	href?: string;
+	type: "button" | "submit";
 };
 
-const Button: FC<ButtonProps> = ({ mode, title, type, href }) => {
-	const Link = (
-		<a
-			className="button"
-			href={href}
-		>
-			{title}
-		</a>
-	);
-
-	const Button = (
+const Button: FC<ButtonProps> = ({ title, type }) => {
+	return (
 		<button
 			className="button"
 			type={type}
@@ -26,8 +15,6 @@ const Button: FC<ButtonProps> = ({ mode, title, type, href }) => {
 			{title}
 		</button>
 	);
-
-	return mode === "link" ? Link : Button;
 };
 
 export default Button;
