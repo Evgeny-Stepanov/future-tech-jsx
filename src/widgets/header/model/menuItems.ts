@@ -1,9 +1,9 @@
-type HeaderMenuItem = {
+type MenuItem = {
 	title: string;
 	path: string;
 };
 
-const headerMenuItems: HeaderMenuItem[] = [
+const menuItems: MenuItem[] = [
 	{
 		title: "Home",
 		path: "/",
@@ -22,4 +22,4 @@ const headerMenuItems: HeaderMenuItem[] = [
 	},
 ];
 
-export default headerMenuItems;
+export default menuItems;

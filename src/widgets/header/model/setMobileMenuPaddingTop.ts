@@ -1,6 +1,6 @@
 const setMobileMenuPaddingTop = (mobileMenu: HTMLDialogElement) => {
 	const mobileMenuHeight = mobileMenu.querySelector("div")!.offsetHeight;
-	const screenHeight = screen.height;
+	const screenHeight = window.innerHeight;
 
 	const blockPadding = Math.floor((screenHeight - mobileMenuHeight) / 2);
 

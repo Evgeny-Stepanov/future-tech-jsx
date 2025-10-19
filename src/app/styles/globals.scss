@@ -1,7 +1,6 @@
 @use "./helpers" as *;
 
 body {
-	height: 100%;
 	font-family: var(--font-family-base);
 	font-weight: 400;
 	font-size: fluid(18, 14);
@@ -10,18 +9,8 @@ body {
 	overflow-x: hidden;
 
 	&:has(dialog[open]) {
-		overflow-x: hidden;
+		overflow: hidden;
 	}
-}
-
-#root {
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-}
-
-main {
-	flex-grow: 1;
 }
 
 section {

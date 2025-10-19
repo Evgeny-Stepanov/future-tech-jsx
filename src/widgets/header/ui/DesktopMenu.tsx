@@ -1,17 +1,17 @@
 import { NavLink } from "react-router";
 import { type FC } from "react";
 import classNames from "classnames";
-import headerMenuItems from "../model/headerMenuItems";
+import menuItems from "../model/menuItems";
 
-type HeaderDesktopMenuProps = {
+type DesktopMenuProps = {
 	isHiddenMobile?: true;
 };
 
-const HeaderDesktopMenu: FC<HeaderDesktopMenuProps> = ({ isHiddenMobile }) => {
+const DesktopMenu: FC<DesktopMenuProps> = ({ isHiddenMobile }) => {
 	return (
 		<nav className={isHiddenMobile && "hidden-mobile"}>
 			<ul className="header__list">
-				{headerMenuItems.map(({ title, path }) => (
+				{menuItems.map(({ title, path }) => (
 					<li key={title}>
 						<NavLink
 							to={path}
@@ -30,4 +30,4 @@ const HeaderDesktopMenu: FC<HeaderDesktopMenuProps> = ({ isHiddenMobile }) => {
 	);
 };
 
-export default HeaderDesktopMenu;
+export default DesktopMenu;

@@ -1,26 +1,28 @@
 @use "@/app/styles/helpers" as *;
 
 .link {
-	position: relative;
-	gap: 10px;
 	-webkit-tap-highlight-color: transparent;
 
-	&::before {
-		content: "";
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-		height: 1px;
-		background-color: var(--color-yellow-55);
-		transform: scaleX(0);
-		transform-origin: bottom right;
-		transition: transform var(--transition-duration);
+	span {
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 1px;
+			background-color: var(--color-yellow-55);
+			transform: scaleX(0);
+			transform-origin: bottom right;
+			transition: transform var(--transition-duration);
+		}
 	}
 
 	@include hover {
 		color: var(--color-yellow-55);
 
-		&::before {
+		span::before {
 			transform: scaleX(1);
 			transform-origin: bottom left;
 		}
@@ -28,22 +30,21 @@
 
 	&--has-icon-rotate-animation {
 		@include hover {
-			.link__icon {
+			div svg {
 				rotate: 45deg;
 			}
 		}
 	}
 
-	div,
-	&__icon {
-		@include square(fluid-to-laptop(24, 20));
-	}
-
 	div {
-		align-self: center;
-	}
+		@include square(fluid-to-laptop(24, 20));
 
-	&__icon {
-		transition: rotate var(--transition-duration);
+		align-self: center;
+		flex-shrink: 0;
+		margin-left: 10px;
+
+		svg {
+			transition: rotate var(--transition-duration);
+		}
 	}
 }

@@ -1,9 +1,9 @@
-import "./SectionTitle.scss";
+import "./SectionHeader.scss";
 import { type FC } from "react";
 import LogoWithoutTextSVG from "./logo-without-text.svg?react";
 import LinkWithIcon from "../../LinkWithIcon";
 
-type SectionTitleProps = {
+type SectionHeaderProps = {
 	preTitle: string;
 	title: string;
 	hasLogo?: true;
@@ -13,7 +13,7 @@ type SectionTitleProps = {
 	href?: string;
 };
 
-const SectionTitle: FC<SectionTitleProps> = ({
+const SectionHeader: FC<SectionHeaderProps> = ({
 	preTitle,
 	title,
 	hasLogo,
@@ -25,9 +25,9 @@ const SectionTitle: FC<SectionTitleProps> = ({
 	const mobileMediaWidth = window.matchMedia("(width <= 480px)").matches;
 
 	return (
-		<header className="section__header">
+		<header className="section-header">
 			{hasLogo && (
-				<div className="section__logo">
+				<div className="section-header__logo">
 					<LogoWithoutTextSVG
 						width={150}
 						height={150}
@@ -36,14 +36,12 @@ const SectionTitle: FC<SectionTitleProps> = ({
 				</div>
 			)}
 
-			<span className="section__pre-title">{preTitle}</span>
-			<h2 className="section__title">{title}</h2>
+			<span className="section-header__pre-title">{preTitle}</span>
+			<h2 className="section-header__title">{title}</h2>
 
-			{mobileMediaWidth ? (
-				<p className="section__description">{descriptionForMobile}</p>
-			) : (
-				<p className="section__description">{descriptionForDesktop}</p>
-			)}
+			<p className="section-header__description">
+				{mobileMediaWidth ? descriptionForMobile : descriptionForDesktop}
+			</p>
 
 			{linkTitle && (
 				<LinkWithIcon
@@ -55,4 +53,4 @@ const SectionTitle: FC<SectionTitleProps> = ({
 	);
 };
 
-export default SectionTitle;
+export default SectionHeader;

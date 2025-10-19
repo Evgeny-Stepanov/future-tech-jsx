@@ -1,12 +1,10 @@
 @use "@/app/styles/helpers" as *;
 
-.section {
-	&__header {
-		display: grid;
-		grid-template-columns: auto 1fr;
-		grid-template-rows: repeat(3, max-content);
-		align-items: center;
-	}
+.section-header {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-template-rows: repeat(3, max-content);
+	align-items: center;
 
 	&__logo {
 		@include square(fluid(150, 60));
@@ -40,7 +38,6 @@
 
 	&__title {
 		margin-top: fluid-to-laptop(16, 10);
-		font-family: var(--font-family-alt);
 
 		@include mobile {
 			grid-column: 1 / 3;

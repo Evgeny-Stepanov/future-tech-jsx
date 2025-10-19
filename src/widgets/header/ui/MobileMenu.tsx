@@ -1,14 +1,14 @@
-import HeaderDesktopMenu from "./HeaderDesktopMenu";
+import DesktopMenu from "./DesktopMenu";
 import ContactsButton from "./ContactsButton";
 import BurgerButton from "./BurgerButton";
 
-const HeaderMobileMenu = () => {
+const MobileMenu = () => {
 	const titleForBurgerButton = "Закрыть меню";
 
 	return (
 		<dialog className="header__mobile-menu">
 			<div>
-				<HeaderDesktopMenu />
+				<DesktopMenu />
 				<ContactsButton isVisibleInMobileMenu />
 				<BurgerButton title={titleForBurgerButton} />
 			</div>
@@ -16,4 +16,4 @@ const HeaderMobileMenu = () => {
 	);
 };
 
-export default HeaderMobileMenu;
+export default MobileMenu;

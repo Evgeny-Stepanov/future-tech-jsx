@@ -2,8 +2,8 @@ import "./Header.scss";
 import { NavLink } from "react-router";
 import classNames from "classnames";
 import "@/shared/ui/Button/ui/Button.scss";
-import HeaderDesktopMenu from "./HeaderDesktopMenu";
-import HeaderMobileMenu from "./HeaderMobileMenu";
+import DesktopMenu from "./DesktopMenu";
+import MobileMenu from "./MobileMenu";
 import ContactsButton from "./ContactsButton";
 import BurgerButton from "./BurgerButton";
 import LogoWithTextSVG from "./logo-with-text.svg?react";
@@ -32,7 +32,7 @@ const Header = () => {
 				/>
 			</NavLink>
 
-			<HeaderDesktopMenu isHiddenMobile />
+			<DesktopMenu isHiddenMobile />
 
 			<ContactsButton />
 
@@ -42,7 +42,7 @@ const Header = () => {
 				onBurgerButtonClick={openMobileMenu}
 			/>
 
-			<HeaderMobileMenu />
+			<MobileMenu />
 		</header>
 	);
 };

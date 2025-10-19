@@ -17,12 +17,6 @@ const LinkWithIcon: FC<LinkWithIconProps> = ({
 	title,
 	href,
 }) => {
-	const handleClick = (
-		event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-	) => {
-		event.preventDefault();
-	};
-
 	return (
 		<a
 			href={href}
@@ -31,13 +25,12 @@ const LinkWithIcon: FC<LinkWithIconProps> = ({
 				"link--has-icon-rotate-animation": !hasBorder,
 				"link--has-border": hasBorder,
 			})}
-			onClick={handleClick}
 		>
-			{title}
+			<span>{title}</span>
+
 			<div>
 				{icon === "arrow" && (
 					<ArrowTopRightSVG
-						className="link__icon"
 						width={24}
 						height={24}
 						aria-hidden="true"
@@ -46,7 +39,6 @@ const LinkWithIcon: FC<LinkWithIconProps> = ({
 
 				{icon === "eye" && (
 					<EyeSVG
-						className="link__icon"
 						width={24}
 						height={24}
 						aria-hidden="true"

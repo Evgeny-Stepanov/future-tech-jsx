@@ -3,7 +3,8 @@
 .burger-button {
 	@include square(45px);
 	padding: 8px 5px;
-	background-color: var(--color-dark-10);
+	background-color: transparent;
+	-webkit-tap-highlight-color: transparent;
 
 	@include mobile-s {
 		@include square(34px);

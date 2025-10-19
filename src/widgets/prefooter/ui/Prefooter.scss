@@ -1,5 +1,109 @@
 @use "@/app/styles/helpers" as *;
 
 .prefooter {
+	position: relative;
 	padding-bottom: var(--section-padding-top);
+
+	&::before {
+		@include full-width-background;
+	}
+
+	&__list,
+	&__item {
+		border: var(--border);
+		border-radius: var(--border-radius-l);
+
+		@include laptop {
+			border-radius: var(--border-radius-m);
+		}
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: fluid-to-laptop(20, 10);
+		margin-top: fluid(100, 40);
+		padding: fluid-to-laptop(20, 10);
+		background-color: var(--color-dark-08);
+
+		@include mobile {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__item {
+		padding: fluid(40, 24);
+		background-color: var(--color-dark-10);
+		transition: border-color var(--transition-duration);
+
+		&--has-yellow-border {
+			border-color: var(--color-yellow-55);
+		}
+	}
+
+	div {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 20px;
+
+		@include tablet {
+			flex-direction: column-reverse;
+		}
+
+		@include mobile {
+			flex-direction: row;
+		}
+
+		> h3 {
+			margin: 0;
+			font-size: fluid(22, 16);
+		}
+	}
+
+	&__link {
+		@include square(fluid(52, 40));
+
+		flex-shrink: 0;
+		padding: fluid(14, 10);
+		background-color: var(--color-yellow-55);
+		border: var(--border-width) solid var(--color-yellow-55);
+		border-radius: 50%;
+		transition: all var(--transition-duration);
+
+		svg {
+			transition: rotate var(--transition-duration);
+			path {
+				fill: var(--color-dark-08);
+			}
+		}
+
+		@include hover {
+			background-color: transparent;
+
+			.prefooter__item {
+				border-color: var(--color-yellow-55);
+			}
+
+			svg {
+				rotate: 45deg;
+				path {
+					fill: var(--color-yellow-55);
+				}
+			}
+		}
+	}
+
+	p {
+		margin-top: fluid(20, 10);
+		user-select: none;
+
+		@include tablet {
+			text-align: center;
+		}
+
+		@include mobile {
+			text-align: initial;
+		}
+	}
 }

@@ -9,16 +9,7 @@
 	padding-block: fluid-to-laptop(24, 20);
 
 	&::before {
-		content: "";
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		z-index: -1;
-		display: block;
-		width: 100vw;
-		height: 100%;
-		margin-left: calc((100% - 100vw) / 2);
-		background-color: var(--color-dark-10);
+		@include full-width-background;
 	}
 
 	&__logo {
@@ -29,7 +20,6 @@
 	&__list {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
 		gap: fluid-to-laptop(16, 6);
 	}
 
@@ -38,6 +28,10 @@
 		border: var(--border-width) solid transparent;
 		border-radius: var(--border-radius-m);
 		user-select: none;
+
+		@include laptop {
+			border-radius: var(--border-radius-xs);
+		}
 
 		&--is-current {
 			color: var(--color-white);
@@ -74,7 +68,6 @@
 			align-items: center;
 			gap: 20px;
 			padding-block: fluid(50, 25);
-			background-color: var(--color-dark-25);
 		}
 
 		ul {
@@ -86,7 +79,6 @@
 
 		button {
 			position: fixed;
-			background-color: transparent;
 		}
 	}
 }
