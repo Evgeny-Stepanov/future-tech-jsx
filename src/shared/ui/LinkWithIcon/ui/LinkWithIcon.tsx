@@ -7,6 +7,7 @@ import classNames from "classnames";
 type LinkWithIconProps = {
 	icon?: "arrow" | "eye";
 	hasBorder?: true;
+	hasNotRotateAnimation?: true;
 	title: string;
 	href: string;
 };
@@ -14,6 +15,7 @@ type LinkWithIconProps = {
 const LinkWithIcon: FC<LinkWithIconProps> = ({
 	icon = "arrow",
 	hasBorder,
+	hasNotRotateAnimation,
 	title,
 	href,
 }) => {
@@ -22,7 +24,7 @@ const LinkWithIcon: FC<LinkWithIconProps> = ({
 			href={href}
 			target="_blank"
 			className={classNames("link", {
-				"link--has-icon-rotate-animation": !hasBorder,
+				"link--has-icon-rotate-animation": !hasNotRotateAnimation,
 				"link--has-border": hasBorder,
 			})}
 		>

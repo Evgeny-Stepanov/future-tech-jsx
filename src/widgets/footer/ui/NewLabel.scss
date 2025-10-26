@@ -1,0 +1,20 @@
+@use "@/app/styles/helpers" as *;
+
+.footer__new-label {
+	margin-left: 8px;
+	padding: fluid-to-laptop(4, 2) fluid-to-laptop(12, 10);
+	font-size: fluid-to-laptop(16, 12);
+	color: var(--color-white);
+	border: var(--border-width) solid transparent;
+	border-radius: var(--border-radius-xs);
+
+	background:
+		linear-gradient(var(--color-dark-10), var(--color-dark-10)) padding-box,
+		linear-gradient(45deg, var(--color-dark-15) 36%, #ffd119 100%) border-box;
+
+	background-clip: padding-box, border-box;
+
+	@include laptop {
+		border-radius: var(--border-radius-xxs);
+	}
+}

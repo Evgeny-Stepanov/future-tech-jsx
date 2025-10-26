@@ -7,15 +7,7 @@
 		position: relative;
 
 		&::before {
-			content: "";
-			position: absolute;
-			bottom: 0;
-			width: 100%;
-			height: 1px;
-			background-color: var(--color-yellow-55);
-			transform: scaleX(0);
-			transform-origin: bottom right;
-			transition: transform var(--transition-duration);
+			@include underline-pseudo-element;
 		}
 	}
 
@@ -45,6 +37,18 @@
 
 		svg {
 			transition: rotate var(--transition-duration);
+		}
+	}
+
+	&--has-border {
+		border: var(--border);
+
+		@include hover {
+			border-color: var(--color-yellow-55);
+
+			span::before {
+				transform: scaleX(0);
+			}
 		}
 	}
 }

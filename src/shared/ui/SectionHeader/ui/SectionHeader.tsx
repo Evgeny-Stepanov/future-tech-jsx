@@ -2,6 +2,7 @@ import "./SectionHeader.scss";
 import { type FC } from "react";
 import LogoWithoutTextSVG from "./logo-without-text.svg?react";
 import LinkWithIcon from "../../LinkWithIcon";
+import { mobileMediaWidth } from "@/shared/config/globalVariables";
 
 type SectionHeaderProps = {
 	preTitle: string;
@@ -22,8 +23,6 @@ const SectionHeader: FC<SectionHeaderProps> = ({
 	linkTitle,
 	href,
 }) => {
-	const mobileMediaWidth = window.matchMedia("(width <= 480px)").matches;
-
 	return (
 		<header className="section-header">
 			{hasLogo && (
