@@ -89,9 +89,7 @@
 		}
 
 		&__links {
-			&-list {
-				gap: fluid-to-laptop(11, 8);
-			}
+			gap: fluid-to-laptop(11, 8);
 
 			span {
 				display: inline-block;
@@ -118,13 +116,11 @@
 		}
 
 		&__socials {
+			flex-wrap: wrap;
+			gap: fluid-to-laptop(20, 14);
+
 			@include tablet {
 				order: -1;
-			}
-
-			&-list {
-				flex-wrap: wrap;
-				gap: fluid-to-laptop(20, 14);
 			}
 
 			li {

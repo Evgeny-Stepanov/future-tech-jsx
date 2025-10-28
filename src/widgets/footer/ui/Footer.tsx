@@ -53,80 +53,74 @@ const Footer = () => {
 			<hr />
 
 			<div className="footer__copyright copyright">
-				<div className="copyright__links">
-					<ul className="copyright__links-list">
-						<li>
-							<a
-								href="/"
-								className="copyright__links-link"
-							>
-								Terms & Conditions
-							</a>
-						</li>
-						<li>
-							<span></span>
-						</li>
-						<li>
-							<a
-								href="/"
-								className="copyright__links-link"
-							>
-								Privacy Policy
-							</a>
-						</li>
-					</ul>
-				</div>
+				<ul className="copyright__links">
+					<li>
+						<a
+							href="/"
+							className="copyright__links-link"
+						>
+							Terms & Conditions
+						</a>
+					</li>
+					<li aria-hidden="true">
+						<span></span>
+					</li>
+					<li>
+						<a
+							href="/"
+							className="copyright__links-link"
+						>
+							Privacy Policy
+						</a>
+					</li>
+				</ul>
 
-				<div className="copyright__socials">
-					<ul className="copyright__socials-list">
-						<li>
-							<a
-								href="/"
-								aria-label="Twitter"
-								title="Twitter"
-								className="copyright__socials-link"
-							>
-								<TwitterLogoSVG
-									width={24}
-									height={24}
-									aria-hidden="true"
-								/>
-							</a>
-						</li>
-						<li>
-							<a
-								href="/"
-								aria-label="Some network"
-								title="Some network"
-								className="copyright__socials-link"
-							>
-								<SomeLogoSVG
-									width={24}
-									height={24}
-									aria-hidden="true"
-								/>
-							</a>
-						</li>
-						<li>
-							<a
-								href="/"
-								aria-label="Linked In"
-								title="Linked In"
-								className="copyright__socials-link"
-							>
-								<LinkedInLogoSVG
-									width={24}
-									height={24}
-									aria-hidden="true"
-								/>
-							</a>
-						</li>
-					</ul>
-				</div>
+				<ul className="copyright__socials">
+					<li>
+						<a
+							href="/"
+							aria-label="Twitter"
+							title="Twitter"
+							className="copyright__socials-link"
+						>
+							<TwitterLogoSVG
+								width={24}
+								height={24}
+								aria-hidden="true"
+							/>
+						</a>
+					</li>
+					<li>
+						<a
+							href="/"
+							aria-label="Some network"
+							title="Some network"
+							className="copyright__socials-link"
+						>
+							<SomeLogoSVG
+								width={24}
+								height={24}
+								aria-hidden="true"
+							/>
+						</a>
+					</li>
+					<li>
+						<a
+							href="/"
+							aria-label="Linked In"
+							title="Linked In"
+							className="copyright__socials-link"
+						>
+							<LinkedInLogoSVG
+								width={24}
+								height={24}
+								aria-hidden="true"
+							/>
+						</a>
+					</li>
+				</ul>
 
-				<div className="copyright__text">
-					<p>© 2024 FutureTech. All rights reserved.</p>
-				</div>
+				<p>© 2024 FutureTech. All rights reserved.</p>
 			</div>
 		</footer>
 	);
