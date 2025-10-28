@@ -64,4 +64,80 @@
 			}
 		}
 	}
+
+	hr {
+		height: 1px;
+		margin: 0;
+		background-color: var(--color-dark-15);
+		border: none;
+	}
+
+	.copyright {
+		display: flex;
+		justify-content: space-between;
+		gap: 20px;
+		padding-block: fluid-to-laptop(40, 24);
+		color: var(--color-dark-40);
+
+		@include tablet {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		ul {
+			display: flex;
+		}
+
+		&__links {
+			&-list {
+				gap: fluid-to-laptop(11, 8);
+			}
+
+			span {
+				display: inline-block;
+				width: 1px;
+				height: 100%;
+				background-color: var(--color-dark-15);
+			}
+
+			&-link {
+				position: relative;
+				&::before {
+					@include underline-pseudo-element;
+				}
+
+				@include hover {
+					color: var(--color-yellow-55);
+
+					&::before {
+						transform: scaleX(1);
+						transform-origin: bottom left;
+					}
+				}
+			}
+		}
+
+		&__socials {
+			@include tablet {
+				order: -1;
+			}
+
+			&-list {
+				flex-wrap: wrap;
+				gap: fluid-to-laptop(20, 14);
+			}
+
+			li {
+				@include square(fluid-to-laptop(24, 20));
+			}
+
+			&-link {
+				@include hover {
+					svg path {
+						fill: var(--color-yellow-55);
+					}
+				}
+			}
+		}
+	}
 }
