@@ -1,0 +1,72 @@
+@use "@/app/styles/helpers" as *;
+
+.link-card {
+	transition: border-color var(--transition-duration);
+
+	> svg {
+		@include square(fluid(50, 30));
+		margin-bottom: fluid(30, 16);
+	}
+
+	& &__title-group {
+		flex-direction: column;
+		align-items: start;
+		gap: fluid-to-laptop(4, 2);
+
+		:last-child {
+			font-size: fluid(18, 14);
+			font-weight: 400;
+			color: var(--color-gray-50);
+		}
+	}
+
+	div {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 20px;
+
+		@include tablet {
+			flex-direction: column-reverse;
+		}
+
+		@include mobile {
+			flex-direction: row;
+		}
+	}
+
+	div:has(.link-card__title-group) {
+		@include tablet {
+			flex-direction: row;
+		}
+	}
+
+	&__link {
+		@include square(fluid(52, 40));
+
+		flex-shrink: 0;
+		padding: fluid(14, 10);
+		background-color: var(--color-yellow-55);
+		border: var(--border-width) solid var(--color-yellow-55);
+		border-radius: 50%;
+		transition: all var(--transition-duration);
+
+		svg {
+			transition: rotate var(--transition-duration);
+			path {
+				fill: var(--color-dark-08);
+			}
+		}
+
+		@include hover {
+			background-color: transparent;
+
+			svg {
+				rotate: 45deg;
+				path {
+					fill: var(--color-yellow-55);
+				}
+			}
+		}
+	}
+}

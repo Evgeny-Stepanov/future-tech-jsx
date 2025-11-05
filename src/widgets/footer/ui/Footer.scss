@@ -35,7 +35,7 @@
 		color: var(--color-dark-40);
 
 		&::before {
-			@include underline-pseudo-element;
+			@include pseudo-element-underline;
 		}
 
 		@include hover {
@@ -91,17 +91,15 @@
 		&__links {
 			gap: fluid-to-laptop(11, 8);
 
-			span {
-				display: inline-block;
+			li:empty {
 				width: 1px;
-				height: 100%;
 				background-color: var(--color-dark-15);
 			}
 
 			&-link {
 				position: relative;
 				&::before {
-					@include underline-pseudo-element;
+					@include pseudo-element-underline;
 				}
 
 				@include hover {

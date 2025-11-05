@@ -67,16 +67,18 @@
 @mixin full-width-background {
 	content: "";
 	position: absolute;
-	bottom: 0;
+	top: 0;
 	left: 0;
 	z-index: -1;
 	width: 100vw;
 	height: 100%;
 	margin-left: calc((100% - 100vw) / 2);
 	background-color: var(--color-dark-10);
+	border-top: var(--border);
+	border-bottom: var(--border);
 }
 
-@mixin underline-pseudo-element {
+@mixin pseudo-element-underline {
 	content: "";
 	position: absolute;
 	bottom: 0;

@@ -62,9 +62,7 @@ const Footer = () => {
 							Terms & Conditions
 						</a>
 					</li>
-					<li aria-hidden="true">
-						<span></span>
-					</li>
+					<li aria-hidden="true"></li>
 					<li>
 						<a
 							href="/"

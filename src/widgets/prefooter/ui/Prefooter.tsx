@@ -1,28 +1,9 @@
 import "./Prefooter.scss";
 import SectionHeader from "@/shared/ui/SectionHeader";
-import ArrowTopRightSVG from "@/shared/ui/LinkWithIcon/ui/arrow-top-right.svg?react";
 import advantagesItems from "../model/advantagesItems";
+import LinkCard from "@/shared/ui/LinkCard";
 
 const Prefooter = () => {
-	const toggleListItemYellowBorder = (
-		event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-	) => {
-		const parentLi = event.currentTarget.closest(".prefooter__item");
-		parentLi!.classList.toggle("prefooter__item--has-yellow-border");
-	};
-
-	const handleMouseOver = (
-		event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-	) => {
-		toggleListItemYellowBorder(event);
-	};
-
-	const handleMouseOut = (
-		event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-	) => {
-		toggleListItemYellowBorder(event);
-	};
-
 	return (
 		<section className="prefooter container">
 			<SectionHeader
@@ -39,25 +20,12 @@ const Prefooter = () => {
 						key={title}
 						className="prefooter__item"
 					>
-						<div>
-							<h3 id={title}>{title}</h3>
-
-							<a
-								href={href}
-								className="prefooter__link"
-								aria-labelledby={title}
-								onMouseOver={handleMouseOver}
-								onMouseOut={handleMouseOut}
-							>
-								<ArrowTopRightSVG
-									width={24}
-									height={24}
-									aria-hidden="true"
-								/>
-							</a>
-						</div>
-
-						<p>{description}</p>
+						<LinkCard
+							headingTag="h3"
+							href={href}
+							title={title}
+							description={description}
+						/>
 					</li>
 				))}
 			</ul>

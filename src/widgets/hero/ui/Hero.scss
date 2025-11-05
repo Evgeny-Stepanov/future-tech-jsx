@@ -1,0 +1,120 @@
+@use "@/app/styles/helpers" as *;
+
+.hero {
+	display: grid;
+	grid-template-columns: 59% 41%;
+	padding: 0;
+
+	@include mobile {
+		grid-template-columns: 1fr;
+	}
+
+	&__text {
+		padding: fluid(150, 40) fluid-to-laptop(50, 40) 100px 0;
+
+		@include mobile {
+			padding: fluid(150, 40) 0 30px 0;
+		}
+	}
+
+	&__pre-title {
+		font-family: var(--font-family-alt);
+		font-size: fluid(30, 18);
+		font-weight: 500;
+		color: var(--color-dark-40);
+	}
+
+	&__title {
+		margin-top: fluid(30, 14);
+	}
+
+	&__description {
+		margin-top: fluid(20, 10);
+		color: var(--color-gray-50);
+	}
+
+	&__statistics {
+		position: relative;
+		grid-column: 1 / 2;
+		display: flex;
+		justify-content: space-between;
+		gap: fluid(50, 20);
+
+		&::before {
+			@include full-width-background;
+			width: calc((100vw - 100%) / 2 + 100%);
+			background-color: transparent;
+
+			@include mobile {
+				width: 100vw;
+				border-bottom: none;
+			}
+		}
+
+		&-item {
+			position: relative;
+			width: fluid(248, 98);
+			padding-block: fluid(50, 20);
+
+			@include mobile-s {
+				width: 100%;
+			}
+
+			&:empty {
+				width: 1px;
+				background-color: var(--color-dark-15);
+			}
+
+			h2 {
+				font-family: var(--font-family-base);
+
+				span {
+					color: var(--color-yellow-55);
+				}
+			}
+
+			p {
+				margin-top: fluid(10, 0);
+			}
+		}
+	}
+
+	&__explore {
+		grid-column: 2 / 3;
+		grid-row: 1 / 3;
+		display: flex;
+		flex-direction: column;
+		justify-content: end;
+		padding: fluid(395, 100) 0 fluid(80, 40) fluid(80, 40);
+		background:
+			linear-gradient(rgba(#141414, 0), rgba(#141414, 1)),
+			url("./background.png") top left/cover no-repeat;
+		border-left: var(--border);
+
+		@include mobile {
+			grid-column: 1 / 2;
+			grid-row: auto;
+			border-left: none;
+		}
+
+		&-people {
+			display: inline-block;
+			padding: 10px;
+			background-color: var(--color-dark-10);
+			border: var(--border);
+			border-radius: 100px;
+		}
+
+		h3 {
+			margin-top: fluid-to-laptop(30, 20);
+		}
+
+		p {
+			margin-top: fluid(14, 4);
+		}
+
+		.link {
+			margin-top: fluid-to-laptop(30, 20);
+		}
+	}
+}

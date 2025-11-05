@@ -1,0 +1,57 @@
+@use "@/app/styles/helpers" as *;
+
+.hero__cards {
+	position: relative;
+	grid-column: 1 / 3;
+	display: flex;
+	gap: fluid-to-laptop(80, 50);
+
+	@include mobile {
+		flex-direction: column;
+		gap: 0;
+	}
+
+	&::before {
+		@include full-width-background;
+		background-color: transparent;
+		border-bottom: 0;
+	}
+
+	&-item {
+		width: fluid-to-laptop(425, 360);
+		padding-block: fluid(50, 30);
+
+		@include mobile {
+			width: 100%;
+		}
+
+		&:empty {
+			width: 1px;
+			padding: 0;
+			background-color: var(--color-dark-15);
+
+			@include mobile {
+				width: 100%;
+				height: 1px;
+			}
+		}
+
+		p {
+			margin-top: fluid(30, 10);
+		}
+
+		.link-card > div {
+			@include tablet {
+				align-items: start;
+			}
+
+			@include mobile {
+				align-items: center;
+			}
+		}
+	}
+
+	&-icon {
+		@include square(fluid(50, 30));
+	}
+}
