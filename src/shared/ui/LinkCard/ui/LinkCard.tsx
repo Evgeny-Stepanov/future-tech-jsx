@@ -23,7 +23,13 @@ const LinkCard: FC<LinkCardProps> = ({
 		event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
 	) => {
 		const parentLi = event.currentTarget.closest("li");
-		parentLi!.classList.toggle("has-yellow-border");
+
+		const computedStyleParentLi = window.getComputedStyle(parentLi!);
+		const hasBorder = !computedStyleParentLi.border.includes("none");
+
+		if (hasBorder) {
+			parentLi!.classList.toggle("has-yellow-border");
+		}
 	};
 
 	const handleMouseOver = (
