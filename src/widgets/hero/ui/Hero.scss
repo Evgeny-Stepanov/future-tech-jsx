@@ -3,7 +3,6 @@
 .hero {
 	display: grid;
 	grid-template-columns: 59% 41%;
-	padding: 0;
 
 	@include mobile {
 		grid-template-columns: 1fr;
@@ -42,6 +41,7 @@
 
 		&::before {
 			@include full-width-background;
+
 			width: calc((100vw - 100%) / 2 + 100%);
 			background-color: transparent;
 

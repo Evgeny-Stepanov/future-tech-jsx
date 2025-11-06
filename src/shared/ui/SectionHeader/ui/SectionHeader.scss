@@ -6,6 +6,19 @@
 	grid-template-rows: repeat(3, max-content);
 	align-items: center;
 
+	&:has(.section-header__title:last-child) {
+		grid-template-columns: 1fr;
+	}
+
+	&:not(:has(.section-header__logo)) {
+		position: relative;
+		padding-block: var(--section-padding-top);
+
+		&::before {
+			@include full-width-background;
+		}
+	}
+
 	&__logo {
 		@include square(fluid(150, 60));
 
@@ -46,6 +59,12 @@
 		@include mobile-s {
 			margin-top: 20px;
 		}
+	}
+
+	a {
+		grid-column: 2 / 3;
+		grid-row: 1 / 3;
+		justify-self: end;
 	}
 
 	&__description {

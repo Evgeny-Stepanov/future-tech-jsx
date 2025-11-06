@@ -24,8 +24,8 @@ const LinkCard: FC<LinkCardProps> = ({
 	) => {
 		const parentLi = event.currentTarget.closest("li");
 
-		const computedStyleParentLi = window.getComputedStyle(parentLi!);
-		const hasBorder = !computedStyleParentLi.border.includes("none");
+		const computedStylesParentLi = window.getComputedStyle(parentLi!);
+		const hasBorder = !computedStylesParentLi.border.includes("none");
 
 		if (hasBorder) {
 			parentLi!.classList.toggle("has-yellow-border");

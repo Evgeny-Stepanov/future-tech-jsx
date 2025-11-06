@@ -2,7 +2,7 @@
 
 .prefooter {
 	position: relative;
-	padding-bottom: var(--section-padding-top);
+	padding-block: var(--section-padding-top);
 
 	&::before {
 		@include full-width-background;

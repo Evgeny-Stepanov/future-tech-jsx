@@ -38,9 +38,11 @@ const SectionHeader: FC<SectionHeaderProps> = ({
 			<span className="section-header__pre-title">{preTitle}</span>
 			<h2 className="section-header__title">{title}</h2>
 
-			<p className="section-header__description">
-				{mobileMediaWidth ? descriptionForMobile : descriptionForDesktop}
-			</p>
+			{descriptionForDesktop && (
+				<p className="section-header__description">
+					{mobileMediaWidth ? descriptionForMobile : descriptionForDesktop}
+				</p>
+			)}
 
 			{linkTitle && (
 				<LinkWithIcon

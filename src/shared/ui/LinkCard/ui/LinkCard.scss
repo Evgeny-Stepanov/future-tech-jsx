@@ -5,6 +5,7 @@
 
 	> svg {
 		@include square(fluid(50, 30));
+
 		margin-bottom: fluid(30, 16);
 	}
 
@@ -53,6 +54,7 @@
 
 		svg {
 			transition: rotate var(--transition-duration);
+
 			path {
 				fill: var(--color-dark-08);
 			}
@@ -63,6 +65,7 @@
 
 			svg {
 				rotate: 45deg;
+
 				path {
 					fill: var(--color-yellow-55);
 				}
