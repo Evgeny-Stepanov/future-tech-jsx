@@ -11,15 +11,15 @@ const HeroCards = () => {
 		<CardIcon1SVG
 			width={50}
 			height={50}
-		></CardIcon1SVG>,
+		/>,
 		<CardIcon2SVG
 			width={50}
 			height={50}
-		></CardIcon2SVG>,
+		/>,
 		<CardIcon3SVG
 			width={50}
 			height={50}
-		></CardIcon3SVG>,
+		/>,
 	];
 
 	return (

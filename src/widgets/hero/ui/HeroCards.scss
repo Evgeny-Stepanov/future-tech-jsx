@@ -14,7 +14,7 @@
 	&::before {
 		@include full-width-background;
 		background-color: transparent;
-		border-bottom: 0;
+		border-bottom: none;
 	}
 
 	&-item {

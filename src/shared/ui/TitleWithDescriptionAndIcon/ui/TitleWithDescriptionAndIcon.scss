@@ -1,0 +1,19 @@
+@use "@/app/styles/helpers" as *;
+
+.title-wrapper {
+	&__icon {
+		@include square(fluid(80, 50));
+
+		&--is-wide {
+			width: fluid(93, 58);
+		}
+	}
+
+	&__title {
+		margin-top: fluid(50, 20);
+	}
+
+	p {
+		margin-top: fluid(16, 6);
+	}
+}

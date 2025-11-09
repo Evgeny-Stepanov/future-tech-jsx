@@ -1,0 +1,86 @@
+@use "@/app/styles/helpers" as *;
+
+.features {
+	&__row {
+		position: relative;
+		display: flex;
+		align-items: center;
+
+		@include tablet {
+			flex-direction: column;
+		}
+
+		&::before {
+			@include full-width-background;
+
+			background-color: transparent;
+			border-top: none;
+		}
+
+		&:last-child {
+			&::before {
+				display: none;
+			}
+		}
+	}
+
+	&__column {
+		padding: fluid-to-laptop(80, 60) 0 fluid-to-laptop(80, 60)
+			fluid-to-laptop(80, 60);
+
+		&:first-child {
+			width: 37.5%;
+			padding: 0 fluid-to-laptop(80, 60) 0 0;
+
+			@include tablet {
+				border-bottom: var(--border);
+			}
+		}
+
+		&:last-child {
+			width: 62.5%;
+			border-left: var(--border);
+
+			@include tablet {
+				border-left: none;
+			}
+
+			@include mobile-s {
+				padding: 30px 16px !important;
+			}
+		}
+
+		&:first-child,
+		&:last-child {
+			@include tablet {
+				width: 100%;
+				padding: 50px 0;
+			}
+		}
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: fluid(30, 10);
+
+		@include mobile-s {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__item {
+		padding: fluid(40, 24);
+		background-color: var(--color-dark-10);
+		border: var(--border);
+		border-radius: var(--border-radius-l);
+
+		@include laptop {
+			border-radius: var(--border-radius-m);
+		}
+
+		p {
+			margin-top: fluid(20, 4);
+		}
+	}
+}

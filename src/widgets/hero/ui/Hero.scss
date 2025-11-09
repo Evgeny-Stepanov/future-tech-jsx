@@ -44,15 +44,14 @@
 
 			width: calc((100vw - 100%) / 2 + 100%);
 			background-color: transparent;
+			border-bottom: none;
 
 			@include mobile {
 				width: 100vw;
-				border-bottom: none;
 			}
 		}
 
 		&-item {
-			position: relative;
 			width: fluid(248, 98);
 			padding-block: fluid(50, 20);
 

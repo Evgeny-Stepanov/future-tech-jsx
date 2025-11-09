@@ -2,6 +2,7 @@
 
 .link {
 	-webkit-tap-highlight-color: transparent;
+	background-color: var(--color-dark-08);
 
 	span {
 		position: relative;
@@ -44,6 +45,10 @@
 		padding: fluid-to-laptop(18, 14) fluid-to-laptop(24, 20);
 		border: var(--border);
 		border-radius: var(--border-radius-l);
+
+		@include laptop {
+			border-radius: var(--border-radius-s);
+		}
 
 		@include hover {
 			border-color: var(--color-yellow-55);

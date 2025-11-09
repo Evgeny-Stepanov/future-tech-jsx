@@ -17,6 +17,12 @@
 		&::before {
 			@include full-width-background;
 		}
+
+		.section-header__title {
+			@include mobile-s {
+				margin-top: fluid-to-laptop(16, 10);
+			}
+		}
 	}
 
 	&__logo {
@@ -46,7 +52,7 @@
 		font-weight: 500;
 		color: var(--color-white);
 		background-color: var(--color-dark-20);
-		border-radius: var(--border-radius-xs);
+		border-radius: var(--border-radius-xxs);
 	}
 
 	&__title {
