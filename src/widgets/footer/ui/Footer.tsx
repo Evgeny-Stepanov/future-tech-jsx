@@ -37,10 +37,11 @@ const Footer = () => {
 											<a
 												href={href}
 												className="footer__link"
+												aria-describedby={title.toLowerCase()}
 											>
 												{title}
 											</a>
-											{label && <NewLabel />}
+											{label && <NewLabel title={title} />}
 										</>
 									)}
 								</li>

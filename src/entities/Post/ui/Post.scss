@@ -1,0 +1,90 @@
+@use "@/app/styles/helpers" as *;
+
+.post {
+	position: relative;
+	display: grid;
+	grid-template-columns:
+		minmax(203px, fluid-to-laptop(384, 305))
+		1fr minmax(127px, 168px);
+	column-gap: fluid(50, 24);
+	padding-block: fluid(80, 40);
+
+	@media (width <= 1280px) {
+		grid-template-columns:
+			minmax(203px, fluid(342, 203))
+			1fr minmax(127px, 168px);
+	}
+
+	@include tablet {
+		grid-template-columns: 1fr auto;
+		grid-template-rows: auto auto;
+	}
+
+	&::before {
+		@include full-width-background;
+
+		background-color: transparent;
+		border-bottom: none;
+	}
+
+	&__author {
+		display: flex;
+		align-self: start;
+		gap: fluid(16, 8);
+
+		&-description {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: fluid-to-laptop(2, 0);
+		}
+
+		&-name {
+			font-size: fluid-to-laptop(20, 18);
+			font-weight: 600;
+			color: var(--color-white);
+		}
+
+		&-photo {
+			@include square(fluid-to-laptop(80, 60));
+
+			flex-shrink: 0;
+		}
+	}
+
+	&__info {
+		@include tablet {
+			grid-column: 1 / 3;
+			grid-row: 2 / 3;
+			margin-top: fluid(50, 30);
+		}
+	}
+
+	&__date {
+		font-weight: 600;
+		color: inherit;
+	}
+
+	&__title {
+		margin-top: fluid(30, 20);
+	}
+
+	&__description {
+		margin-top: fluid(10, 4);
+	}
+
+	&__activity {
+		display: flex;
+		gap: fluid-to-laptop(10, 8);
+		margin-top: fluid(30, 20);
+	}
+
+	a {
+		align-self: center;
+
+		@include tablet {
+			justify-self: end;
+			width: fit-content;
+		}
+	}
+}

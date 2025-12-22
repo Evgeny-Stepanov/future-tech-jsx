@@ -48,6 +48,7 @@ const SectionHeader: FC<SectionHeaderProps> = ({
 				<LinkWithIcon
 					title={linkTitle}
 					href={href as string}
+					hasBorder
 				/>
 			)}
 		</header>

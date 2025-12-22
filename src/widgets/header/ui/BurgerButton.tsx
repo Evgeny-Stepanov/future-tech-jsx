@@ -19,6 +19,7 @@ const BurgerButton: FC<BurgerButtonProps> = ({
 			className={classNames("burger-button", className)}
 			aria-label={title}
 			onClick={onBurgerButtonClick}
+			lang="ru"
 		>
 			<div>
 				<span></span>

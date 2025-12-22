@@ -1,0 +1,51 @@
+@use "@/app/styles/helpers" as *;
+
+.blog {
+	&__tabs-list {
+		display: grid;
+		grid-template-columns: repeat(6, minmax(152px, 250px));
+		gap: fluid-to-laptop(20, 14);
+		padding-block: fluid(50, 20);
+
+		@include tablet {
+			grid-auto-flow: column;
+			grid-auto-columns: 152px;
+			overflow-x: auto;
+		}
+	}
+
+	&__tabs-item {
+		border: var(--border);
+		border-radius: var(--border-radius-s);
+		transition-duration: var(--transition-duration);
+
+		@include laptop {
+			border-radius: var(--border-radius-xs);
+		}
+
+		&:not(.blog__tabs-item--is-active) {
+			@include hover {
+				color: var(--color-white);
+				border-color: var(--color-yellow-55);
+			}
+		}
+
+		&--is-active {
+			color: var(--color-white);
+			background-color: var(--color-dark-10);
+		}
+
+		button {
+			@include square(100%);
+
+			padding: fluid(30, 18) 11px;
+			color: inherit;
+			background-color: transparent;
+		}
+	}
+
+	&__placeholder-text {
+		padding-block: fluid(30, 20) fluid(80, 40);
+		text-align: center;
+	}
+}

@@ -1,5 +1,5 @@
 import "./LinkCard.scss";
-import { type FC, type ReactElement } from "react";
+import { type ElementType, type FC, type ReactElement } from "react";
 import ArrowTopRightSVG from "@/shared/ui/LinkWithIcon/ui/arrow-top-right.svg?react";
 
 type LinkCardProps = {
@@ -51,7 +51,7 @@ const LinkCard: FC<LinkCardProps> = ({
 	}
 
 	const HeadingTag = headingTag;
-	const SubheadingTag = `h${+headingTag.at(-1)! + 1}`;
+	const SubheadingTag = `h${+headingTag.at(-1)! + 1}` as ElementType;
 
 	return (
 		<div className="link-card">
@@ -60,23 +60,17 @@ const LinkCard: FC<LinkCardProps> = ({
 			<div>
 				{subtitle ? (
 					<div className="link-card__title-group">
-						<HeadingTag
-							id={title}
-							className="h6"
-						>
-							{title}
-						</HeadingTag>
-						{/* @ts-expect-error: It is unclear why it does not complain about the top component, but complains about this one.... */}
+						<HeadingTag className="h6">{title}</HeadingTag>
 						<SubheadingTag>{subtitle}</SubheadingTag>
 					</div>
 				) : (
-					<HeadingTag id={title}>{title}</HeadingTag>
+					<HeadingTag>{title}</HeadingTag>
 				)}
 
 				<a
 					href={href}
 					className="link-card__link"
-					aria-labelledby={title}
+					aria-label={title}
 					onMouseOver={handleMouseOver}
 					onMouseOut={handleMouseOut}
 				>

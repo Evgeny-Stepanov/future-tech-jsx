@@ -10,6 +10,7 @@ type LinkWithIconProps = {
 	hasNotRotateAnimation?: true;
 	title: string;
 	href: string;
+	ariaLabelledby?: string;
 };
 
 const LinkWithIcon: FC<LinkWithIconProps> = ({
@@ -18,6 +19,7 @@ const LinkWithIcon: FC<LinkWithIconProps> = ({
 	hasNotRotateAnimation,
 	title,
 	href,
+	ariaLabelledby,
 }) => {
 	return (
 		<a
@@ -27,6 +29,7 @@ const LinkWithIcon: FC<LinkWithIconProps> = ({
 				"link--has-icon-rotate-animation": !hasNotRotateAnimation,
 				"link--has-border": hasBorder,
 			})}
+			aria-labelledby={ariaLabelledby}
 		>
 			<span>{title}</span>
 

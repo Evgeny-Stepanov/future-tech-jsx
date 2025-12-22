@@ -81,6 +81,11 @@ svg * {
 	transition-duration: var(--transition-duration);
 }
 
+a,
+button {
+	-webkit-tap-highlight-color: transparent;
+}
+
 .has-yellow-border {
 	border-color: var(--color-yellow-55) !important;
 }

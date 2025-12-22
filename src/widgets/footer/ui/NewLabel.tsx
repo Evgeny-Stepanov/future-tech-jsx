@@ -1,7 +1,20 @@
 import "./NewLabel.scss";
+import { type FC } from "react";
+import formatStringToLowercaseWithDashes from "@/shared/utils/formatStringToLowercaseWithDashes";
 
-const NewLabel = () => {
-	return <span className="footer__new-label">New</span>;
+type NewLabelProps = {
+	title: string;
+};
+
+const NewLabel: FC<NewLabelProps> = ({ title }) => {
+	return (
+		<span
+			id={formatStringToLowercaseWithDashes(title)}
+			className="footer__new-label"
+		>
+			New
+		</span>
+	);
 };
 
 export default NewLabel;

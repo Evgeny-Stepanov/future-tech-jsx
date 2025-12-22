@@ -24,6 +24,7 @@ const Header = () => {
 				}
 				aria-label={titleForLogoLink}
 				title={titleForLogoLink}
+				lang="ru"
 			>
 				<LogoWithTextSVG
 					width={179}

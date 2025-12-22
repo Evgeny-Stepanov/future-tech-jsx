@@ -1,7 +1,6 @@
 @use "@/app/styles/helpers" as *;
 
 .link {
-	-webkit-tap-highlight-color: transparent;
 	background-color: var(--color-dark-08);
 
 	span {
@@ -48,6 +47,10 @@
 
 		@include laptop {
 			border-radius: var(--border-radius-s);
+
+			div {
+				margin-left: 4px;
+			}
 		}
 
 		@include hover {

@@ -1,0 +1,33 @@
+@use "@/app/styles/helpers" as *;
+
+.social-activity {
+	display: inline-flex;
+	align-items: center;
+	gap: fluid-to-laptop(4, 2);
+	padding: fluid-to-laptop(8, 6) fluid-to-laptop(16, 12);
+	background-color: var(--color-dark-10);
+	border: var(--border);
+	border-radius: 100px;
+
+	&__icon {
+		@include square(fluid-to-laptop(24, 20));
+
+		display: inline-block;
+
+		svg path {
+			transition-property: none;
+		}
+
+		&--is-liked {
+			svg path {
+				stroke: #ff5500;
+				fill: #ff5500;
+				transition-property: none;
+			}
+		}
+	}
+}
+
+button.social-activity {
+	color: inherit;
+}
