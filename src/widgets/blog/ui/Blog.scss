@@ -25,8 +25,12 @@
 
 		&:not(.blog__tabs-item--is-active) {
 			@include hover {
-				color: var(--color-white);
+				color: var(--color-yellow-55);
 				border-color: var(--color-yellow-55);
+			}
+
+			:focus {
+				color: var(--color-yellow-55);
 			}
 		}
 

@@ -6,9 +6,11 @@ const getTopAndLeftOffsetOfMobileMenuCloseButton = (
 	const topOffsetOfBurgerButtonParent = burgerButtonParent.offsetTop;
 	const topOffsetOfBurgerButton = burgerButton.offsetTop;
 	const topOffsetOfMobileMenuCloseButton =
-		topOffsetOfBurgerButtonParent + topOffsetOfBurgerButton;
+		topOffsetOfBurgerButtonParent + topOffsetOfBurgerButton - window.scrollY;
 
 	const leftOffsetOfMobileMenuCloseButton = burgerButton.offsetLeft;
+
+	console.log(window.scrollY);
 
 	return [
 		`${topOffsetOfMobileMenuCloseButton}px`,

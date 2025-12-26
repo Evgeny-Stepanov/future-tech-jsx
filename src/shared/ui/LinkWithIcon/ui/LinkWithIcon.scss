@@ -13,10 +13,22 @@
 
 	@include hover {
 		color: var(--color-yellow-55);
+	}
 
-		span::before {
-			transform: scaleX(1);
-			transform-origin: bottom left;
+	&:focus {
+		color: var(--color-yellow-55);
+	}
+
+	div {
+		@include square(fluid-to-laptop(24, 20));
+
+		flex-shrink: 0;
+		margin-left: 10px;
+		align-self: center;
+		overflow: hidden;
+
+		svg {
+			transition: rotate var(--transition-duration);
 		}
 	}
 
@@ -28,15 +40,11 @@
 		}
 	}
 
-	div {
-		@include square(fluid-to-laptop(24, 20));
-
-		align-self: center;
-		flex-shrink: 0;
-		margin-left: 10px;
-
-		svg {
-			transition: rotate var(--transition-duration);
+	&.link--has-icon-rotate-animation {
+		&:focus {
+			div svg {
+				rotate: 45deg;
+			}
 		}
 	}
 
@@ -55,9 +63,20 @@
 
 		@include hover {
 			border-color: var(--color-yellow-55);
+		}
+	}
 
+	&.link--has-border {
+		&:focus {
+			border-color: var(--color-yellow-55);
+		}
+	}
+
+	&:not(.link--has-border) {
+		@include hover {
 			span::before {
-				transform: scaleX(0);
+				transform: scaleX(1);
+				transform-origin: bottom left;
 			}
 		}
 	}

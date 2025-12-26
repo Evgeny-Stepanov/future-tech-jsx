@@ -20,28 +20,52 @@ const LinkCard: FC<LinkCardProps> = ({
 	description,
 }) => {
 	const toggleCardYellowBorder = (
-		event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+		event:
+			| React.MouseEvent<HTMLAnchorElement, MouseEvent>
+			| React.FocusEvent<HTMLAnchorElement>
 	) => {
-		const parentLi = event.currentTarget.closest("li");
+		const parentLi = event.currentTarget.closest("li") as HTMLElement;
 
 		const computedStylesParentLi = window.getComputedStyle(parentLi!);
 		const hasBorder = !computedStylesParentLi.border.includes("none");
+
+		return [parentLi, hasBorder] as const;
+	};
+
+	const handleMouseOver = (
+		event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+	) => {
+		const [parentLi, hasBorder] = toggleCardYellowBorder(event);
+
+		if (hasBorder) {
+			parentLi.classList.toggle("has-yellow-border");
+		}
+	};
+
+	const handleMouseOut = (
+		event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+	) => {
+		const [parentLi, hasBorder] = toggleCardYellowBorder(event);
 
 		if (hasBorder) {
 			parentLi!.classList.toggle("has-yellow-border");
 		}
 	};
 
-	const handleMouseOver = (
-		event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-	) => {
-		toggleCardYellowBorder(event);
+	const handleFocus = (event: React.FocusEvent<HTMLAnchorElement>) => {
+		const [parentLi, hasBorder] = toggleCardYellowBorder(event);
+
+		if (hasBorder) {
+			parentLi!.classList.add("has-yellow-border");
+		}
 	};
 
-	const handleMouseOut = (
-		event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-	) => {
-		toggleCardYellowBorder(event);
+	const handleBlur = (event: React.FocusEvent<HTMLAnchorElement>) => {
+		const [parentLi, hasBorder] = toggleCardYellowBorder(event);
+
+		if (hasBorder) {
+			parentLi!.classList.remove("has-yellow-border");
+		}
 	};
 
 	if (headingTag === "h6" && subtitle) {
@@ -73,6 +97,8 @@ const LinkCard: FC<LinkCardProps> = ({
 					aria-label={title}
 					onMouseOver={handleMouseOver}
 					onMouseOut={handleMouseOut}
+					onFocus={handleFocus}
+					onBlur={handleBlur}
 				>
 					<ArrowTopRightSVG
 						width={24}

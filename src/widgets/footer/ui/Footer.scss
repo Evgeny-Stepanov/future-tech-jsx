@@ -46,6 +46,10 @@
 				transform-origin: bottom left;
 			}
 		}
+
+		&:focus {
+			color: var(--color-yellow-55);
+		}
 	}
 
 	.link {
@@ -110,6 +114,10 @@
 						transform-origin: bottom left;
 					}
 				}
+
+				&:focus {
+					color: var(--color-yellow-55);
+				}
 			}
 		}
 
@@ -127,6 +135,12 @@
 
 			&-link {
 				@include hover {
+					svg path {
+						fill: var(--color-yellow-55);
+					}
+				}
+
+				&:focus {
 					svg path {
 						fill: var(--color-yellow-55);
 					}

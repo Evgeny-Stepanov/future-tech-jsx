@@ -7,6 +7,7 @@ const Preheader = () => {
 			<LinkWithIcon
 				title="Subscribe to our Newsletter For New & latest Blogs and Resources"
 				href="/"
+				hasFocusUnderline
 			/>
 		</div>
 	);

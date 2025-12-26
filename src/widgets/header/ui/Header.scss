@@ -45,6 +45,12 @@
 				background-color: var(--color-yellow-55);
 				border-color: var(--color-yellow-55);
 			}
+
+			&:focus {
+				color: var(--color-dark-08);
+				background-color: var(--color-yellow-55);
+				border-color: var(--color-yellow-55);
+			}
 		}
 	}
 

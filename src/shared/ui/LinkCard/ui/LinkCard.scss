@@ -71,5 +71,17 @@
 				}
 			}
 		}
+
+		&:focus {
+			background-color: transparent;
+
+			svg {
+				rotate: 45deg;
+
+				path {
+					fill: var(--color-yellow-55);
+				}
+			}
+		}
 	}
 }
