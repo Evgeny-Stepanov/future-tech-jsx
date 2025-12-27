@@ -38,9 +38,7 @@
 				rotate: 45deg;
 			}
 		}
-	}
 
-	&.link--has-icon-rotate-animation {
 		&:focus {
 			div svg {
 				rotate: 45deg;
@@ -64,9 +62,7 @@
 		@include hover {
 			border-color: var(--color-yellow-55);
 		}
-	}
 
-	&.link--has-border {
 		&:focus {
 			border-color: var(--color-yellow-55);
 		}

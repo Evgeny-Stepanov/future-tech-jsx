@@ -19,52 +19,52 @@ const LinkCard: FC<LinkCardProps> = ({
 	subtitle,
 	description,
 }) => {
-	const toggleCardYellowBorder = (
+	const getListItemWithBorder = (
 		event:
 			| React.MouseEvent<HTMLAnchorElement, MouseEvent>
 			| React.FocusEvent<HTMLAnchorElement>
 	) => {
-		const parentLi = event.currentTarget.closest("li") as HTMLElement;
+		const listItem = event.currentTarget.closest("li") as HTMLElement;
 
-		const computedStylesParentLi = window.getComputedStyle(parentLi!);
+		const computedStylesParentLi = window.getComputedStyle(listItem!);
 		const hasBorder = !computedStylesParentLi.border.includes("none");
 
-		return [parentLi, hasBorder] as const;
+		return [listItem, hasBorder] as const;
 	};
 
 	const handleMouseOver = (
 		event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
 	) => {
-		const [parentLi, hasBorder] = toggleCardYellowBorder(event);
+		const [listItem, hasBorder] = getListItemWithBorder(event);
 
 		if (hasBorder) {
-			parentLi.classList.toggle("has-yellow-border");
+			listItem.classList.toggle("has-yellow-border");
 		}
 	};
 
 	const handleMouseOut = (
 		event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
 	) => {
-		const [parentLi, hasBorder] = toggleCardYellowBorder(event);
+		const [listItem, hasBorder] = getListItemWithBorder(event);
 
 		if (hasBorder) {
-			parentLi!.classList.toggle("has-yellow-border");
+			listItem!.classList.toggle("has-yellow-border");
 		}
 	};
 
 	const handleFocus = (event: React.FocusEvent<HTMLAnchorElement>) => {
-		const [parentLi, hasBorder] = toggleCardYellowBorder(event);
+		const [listItem, hasBorder] = getListItemWithBorder(event);
 
 		if (hasBorder) {
-			parentLi!.classList.add("has-yellow-border");
+			listItem!.classList.add("has-yellow-border");
 		}
 	};
 
 	const handleBlur = (event: React.FocusEvent<HTMLAnchorElement>) => {
-		const [parentLi, hasBorder] = toggleCardYellowBorder(event);
+		const [listItem, hasBorder] = getListItemWithBorder(event);
 
 		if (hasBorder) {
-			parentLi!.classList.remove("has-yellow-border");
+			listItem!.classList.remove("has-yellow-border");
 		}
 	};
 

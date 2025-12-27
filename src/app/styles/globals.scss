@@ -39,7 +39,7 @@ h1,
 h2,
 .h2 {
 	font-family: var(--font-family-alt);
-	font-size: fluid(58, 28);
+	font-size: fluid(58, 27);
 	font-weight: 500;
 }
 
@@ -84,6 +84,7 @@ svg * {
 a,
 button {
 	-webkit-tap-highlight-color: transparent;
+	outline-offset: 4px;
 }
 
 .has-yellow-border {

@@ -1,6 +1,12 @@
 @use "@/app/styles/helpers" as *;
 
 .header {
+	@mixin hover-animation {
+		color: var(--color-dark-08);
+		background-color: var(--color-yellow-55);
+		border-color: var(--color-yellow-55);
+	}
+
 	position: relative;
 	display: flex;
 	justify-content: space-between;
@@ -41,15 +47,11 @@
 
 		&:not(.header__link--is-current) {
 			@include hover {
-				color: var(--color-dark-08);
-				background-color: var(--color-yellow-55);
-				border-color: var(--color-yellow-55);
+				@include hover-animation;
 			}
 
 			&:focus {
-				color: var(--color-dark-08);
-				background-color: var(--color-yellow-55);
-				border-color: var(--color-yellow-55);
+				@include hover-animation;
 			}
 		}
 	}

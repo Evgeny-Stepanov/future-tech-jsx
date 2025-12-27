@@ -34,6 +34,10 @@
 			}
 		}
 
+		&:not(.blog__tabs-item--is-active):focus-within {
+			border-color: var(--color-yellow-55);
+		}
+
 		&--is-active {
 			color: var(--color-white);
 			background-color: var(--color-dark-10);

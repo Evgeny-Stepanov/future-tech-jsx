@@ -10,8 +10,6 @@ const getTopAndLeftOffsetOfMobileMenuCloseButton = (
 
 	const leftOffsetOfMobileMenuCloseButton = burgerButton.offsetLeft;
 
-	console.log(window.scrollY);
-
 	return [
 		`${topOffsetOfMobileMenuCloseButton}px`,
 		`${leftOffsetOfMobileMenuCloseButton}px`,

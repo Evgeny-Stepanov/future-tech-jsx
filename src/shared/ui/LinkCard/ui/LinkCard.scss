@@ -1,6 +1,18 @@
 @use "@/app/styles/helpers" as *;
 
 .link-card {
+	@mixin hover-animation {
+		background-color: transparent;
+
+		svg {
+			rotate: 45deg;
+
+			path {
+				fill: var(--color-yellow-55);
+			}
+		}
+	}
+
 	transition: border-color var(--transition-duration);
 
 	> svg {
@@ -61,27 +73,11 @@
 		}
 
 		@include hover {
-			background-color: transparent;
-
-			svg {
-				rotate: 45deg;
-
-				path {
-					fill: var(--color-yellow-55);
-				}
-			}
+			@include hover-animation;
 		}
 
 		&:focus {
-			background-color: transparent;
-
-			svg {
-				rotate: 45deg;
-
-				path {
-					fill: var(--color-yellow-55);
-				}
-			}
+			@include hover-animation;
 		}
 	}
 }

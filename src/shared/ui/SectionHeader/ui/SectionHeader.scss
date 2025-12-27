@@ -11,7 +11,12 @@
 	}
 
 	&:has(a:last-child) {
-		column-gap: fluid-to-laptop(200, 150);
+		column-gap: fluid-to-laptop(250, 200);
+
+		//* I found a way to better transfer text to 768 pixels using trial and error.
+		@include tablet {
+			column-gap: fluid(345, 35);
+		}
 
 		a {
 			@include mobile {
@@ -24,6 +29,12 @@
 			@include mobile-s {
 				justify-content: center;
 				width: 100%;
+			}
+		}
+
+		.section-header__pre-title {
+			@include mobile {
+				grid-column: 1 / 3;
 			}
 		}
 	}
@@ -89,6 +100,7 @@
 		grid-column: 2 / 3;
 		grid-row: 1 / 3;
 		justify-self: end;
+		align-self: center;
 		width: max-content;
 	}
 
