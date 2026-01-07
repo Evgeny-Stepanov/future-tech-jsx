@@ -10,9 +10,6 @@ import LogoWithTextSVG from "./logo-with-text.svg?react";
 import openMobileMenu from "../model/openMobileMenu";
 
 const Header = () => {
-	const titleForLogoLink = "Перейти на домашнюю страницу";
-	const titleForBurgerButton = "Открыть меню";
-
 	return (
 		<header className="header container">
 			<NavLink
@@ -22,9 +19,8 @@ const Header = () => {
 						? classNames("header__logo", "header__logo--is-current")
 						: "header__logo"
 				}
-				aria-label={titleForLogoLink}
-				title={titleForLogoLink}
-				lang="ru"
+				aria-label="Go to home page"
+				title="Go to home page"
 			>
 				<LogoWithTextSVG
 					width={179}
@@ -38,7 +34,7 @@ const Header = () => {
 			<ContactsButton />
 
 			<BurgerButton
-				title={titleForBurgerButton}
+				title="Open menu"
 				className="visible-mobile"
 				onBurgerButtonClick={openMobileMenu}
 			/>

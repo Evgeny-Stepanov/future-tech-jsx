@@ -13,12 +13,14 @@ const Features = () => {
 		<TechBlogIconSVG
 			width={80}
 			height={80}
+			aria-hidden="true"
 		/>
 	);
 	const InsightBlogIcon = (
 		<InsightBlogIconSVG
 			width={93}
 			height={80}
+			aria-hidden="true"
 		/>
 	);
 

@@ -5,21 +5,21 @@ import EyeSVG from "./eye.svg?react";
 import classNames from "classnames";
 
 type LinkWithIconProps = {
+	title: string;
+	href: string;
 	icon?: "arrow" | "eye";
 	hasBorder?: true;
 	hasNotRotateAnimation?: true;
-	title: string;
-	href: string;
-	ariaLabelledby?: string;
+	hasGrayBackground?: true;
 };
 
 const LinkWithIcon: FC<LinkWithIconProps> = ({
+	title,
+	href,
 	icon = "arrow",
 	hasBorder,
 	hasNotRotateAnimation,
-	title,
-	href,
-	ariaLabelledby,
+	hasGrayBackground,
 }) => {
 	return (
 		<a
@@ -28,8 +28,8 @@ const LinkWithIcon: FC<LinkWithIconProps> = ({
 			className={classNames("link", {
 				"link--has-icon-rotate-animation": !hasNotRotateAnimation,
 				"link--has-border": hasBorder,
+				"link--has-gray-background": hasGrayBackground,
 			})}
-			aria-labelledby={ariaLabelledby}
 		>
 			<span>{title}</span>
 

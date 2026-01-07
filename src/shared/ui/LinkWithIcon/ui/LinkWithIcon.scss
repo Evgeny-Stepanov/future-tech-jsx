@@ -76,4 +76,15 @@
 			}
 		}
 	}
+
+	&--has-gray-background {
+		width: 100%;
+		justify-content: center;
+		background-color: var(--color-dark-10);
+		border-radius: var(--border-radius-s);
+
+		@include laptop {
+			border-radius: var(--border-radius-xs);
+		}
+	}
 }

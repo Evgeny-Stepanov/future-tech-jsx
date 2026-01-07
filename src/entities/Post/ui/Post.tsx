@@ -3,7 +3,6 @@ import { type FC } from "react";
 import LinkWithIcon from "@/shared/ui/LinkWithIcon";
 import SocialActivity from "./SocialActivity";
 import type { PostItem } from "@/widgets/blog/model/postItems";
-import formatStringToLowercaseWithDashes from "@/shared/utils/formatStringToLowercaseWithDashes";
 
 type PostProps = PostItem & {
 	handleLikeClick: (postTitle: string) => void;
@@ -56,12 +55,7 @@ const Post: FC<PostProps> = ({
 				>
 					{setFullDate(postDate)}
 				</time>
-				<h3
-					id={formatStringToLowercaseWithDashes(postTitle)}
-					className="post__title h4"
-				>
-					{postTitle}
-				</h3>
+				<h3 className="post__title h4">{postTitle}</h3>
 				<p className="post__description">{postDescription}</p>
 
 				<div className="post__activity">
@@ -87,7 +81,6 @@ const Post: FC<PostProps> = ({
 				title="View Blog"
 				href="/"
 				hasBorder
-				ariaLabelledby={formatStringToLowercaseWithDashes(postTitle)}
 			/>
 		</div>
 	);

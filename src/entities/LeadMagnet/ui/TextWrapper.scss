@@ -1,0 +1,46 @@
+@use "@/app/styles/helpers" as *;
+
+.text-wrapper {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	grid-template-rows: auto auto;
+	column-gap: fluid-to-laptop(50, 30);
+	row-gap: fluid-to-laptop(4, 2);
+	padding: fluid-to-laptop(30, 20);
+	background-color: var(--color-dark-10);
+	border: var(--border);
+	border-radius: var(--border-radius-xl);
+
+	@include laptop {
+		border-radius: var(--border-radius-s);
+	}
+
+	&:has(h4:last-child) {
+		column-gap: 0;
+	}
+
+	&:has(img:last-child) {
+		h4 {
+			font-size: fluid(24, 18);
+		}
+	}
+
+	h4 {
+		grid-column: 1 / 2;
+		font-weight: 600;
+	}
+
+	> div,
+	> a {
+		grid-column: 2 / 3;
+		grid-row: 1 / 3;
+	}
+
+	> div {
+		width: fluid-to-laptop(193, 149);
+		height: fluid-to-laptop(70, 56);
+		padding: fluid-to-laptop(8, 6);
+		background-color: var(--color-dark-08);
+		border-radius: var(--border-radius-l);
+	}
+}

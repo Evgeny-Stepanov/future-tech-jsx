@@ -23,8 +23,8 @@ const SocialActivity: FC<SocialActivityProps> = ({
 }) => {
 	const ariaLabelForActivity =
 		activityName === "comments"
-			? `Комментарии, количество ${count}`
-			: `Репосты в телеграме, количество ${count}`;
+			? `${count} comments`
+			: `${count} reposts on Telegram`;
 
 	const isLiked = likedPosts?.some((post) => post.postTitle === postTitle);
 
@@ -35,8 +35,7 @@ const SocialActivity: FC<SocialActivityProps> = ({
 					className="social-activity"
 					type="button"
 					aria-pressed={isLiked ? "true" : "false"}
-					aria-label={isLiked ? "Убрать лайк" : "Поставить лайк"}
-					lang="ru"
+					aria-label={isLiked ? "Remove like" : "Like"}
 					onClick={() => handleLikeClick?.(postTitle as string)}
 				>
 					<span
@@ -61,7 +60,6 @@ const SocialActivity: FC<SocialActivityProps> = ({
 							width={24}
 							height={24}
 							aria-label={ariaLabelForActivity}
-							lang="ru"
 						/>
 					</span>
 					<span
@@ -81,7 +79,6 @@ const SocialActivity: FC<SocialActivityProps> = ({
 							height={24}
 							/* I don't know what the designer means by the Telegram icon. */
 							aria-label={ariaLabelForActivity}
-							lang="ru"
 						/>
 					</span>
 					<span

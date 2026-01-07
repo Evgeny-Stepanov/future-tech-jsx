@@ -1,5 +1,6 @@
 import SectionHeader from "@/shared/ui/SectionHeader";
 import "./Resources.scss";
+import LeadMagnet from "@/entities/LeadMagnet";
 
 const Resources = () => {
 	return (
@@ -11,7 +12,14 @@ const Resources = () => {
 				href="/"
 			/>
 
-			
+			<ul className="resources__list">
+				<li className="resources__item">
+					<LeadMagnet content="ebooks" />
+				</li>
+				<li className="resources__item">
+					<LeadMagnet content="whitepapers" />
+				</li>
+			</ul>
 		</section>
 	);
 };

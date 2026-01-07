@@ -1,0 +1,24 @@
+@use "@/app/styles/helpers" as *;
+
+.resources {
+	&__item {
+		display: grid;
+		grid-template-columns: max-content 1fr;
+		align-items: center;
+
+		@include tablet {
+			grid-template-columns: auto;
+		}
+
+		&:first-child {
+			position: relative;
+
+			&::before {
+				@include full-width-background;
+
+				background-color: transparent;
+				border-top: none;
+			}
+		}
+	}
+}

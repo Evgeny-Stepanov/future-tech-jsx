@@ -113,11 +113,8 @@ const Blog = () => {
 					))}
 				</ul>
 			) : (
-				<h3
-					className="blog__placeholder-text h4"
-					lang="ru"
-				>
-					Постов с данной темой нет
+				<h3 className="blog__placeholder-text h4">
+					There are no posts on this topic
 				</h3>
 			)}
 		</section>

@@ -11,14 +11,17 @@ const HeroCards = () => {
 		<CardIcon1SVG
 			width={50}
 			height={50}
+			aria-hidden="true"
 		/>,
 		<CardIcon2SVG
 			width={50}
 			height={50}
+			aria-hidden="true"
 		/>,
 		<CardIcon3SVG
 			width={50}
 			height={50}
+			aria-hidden="true"
 		/>,
 	];
 
