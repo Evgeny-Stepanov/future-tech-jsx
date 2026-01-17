@@ -1,6 +1,6 @@
 import "./Prefooter.scss";
 import SectionHeader from "@/shared/ui/SectionHeader";
-import advantagesItems from "../model/advantagesItems";
+import advantageItems from "../model/advantageItems";
 import LinkCard from "@/shared/ui/LinkCard";
 
 const Prefooter = () => {
@@ -15,7 +15,7 @@ const Prefooter = () => {
 			/>
 
 			<ul className="prefooter__list">
-				{advantagesItems.map(({ title, description, href }) => (
+				{advantageItems.map(({ title, description, href }) => (
 					<li
 						key={title}
 						className="prefooter__item"

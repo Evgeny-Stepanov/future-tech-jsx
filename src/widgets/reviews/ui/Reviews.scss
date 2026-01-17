@@ -1,0 +1,81 @@
+@use "@/app/styles/helpers" as *;
+
+.reviews {
+	@mixin full-width-background-for-review-item {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		width: 100%;
+		height: 200%;
+		border-left: var(--border);
+		border-right: var(--border);
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+
+		@include tablet {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include mobile {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__item {
+		position: relative;
+
+		@include tablet-above {
+			&:nth-child(3n + 2):not(.reviews__item--has-pseudo-bottom) {
+				&::before {
+					@include full-width-background-for-review-item;
+				}
+			}
+		}
+
+		@include tablet {
+			&:nth-child(even) {
+				&::before {
+					@include full-width-background-for-review-item;
+
+					border-right: none;
+				}
+			}
+		}
+
+		@include mobile {
+			&:not(:last-child) {
+				border-bottom: var(--border);
+			}
+
+			&:nth-child(even) {
+				&::before {
+					display: none;
+				}
+			}
+		}
+
+		&--has-pseudo-bottom {
+			&::before {
+				@include full-width-background;
+
+				//* I found it by trial and error
+				margin-left: calc((300% - 100vw) / 2);
+				background-color: transparent;
+				border-top: none;
+
+				@include tablet {
+					margin-left: calc((200% - 100vw) / 2);
+				}
+
+				@include mobile {
+					display: none;
+				}
+			}
+		}
+	}
+}

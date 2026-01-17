@@ -5,7 +5,7 @@ import WhitepapersIconSVG from "./whitepapers.svg?react";
 import {
 	ebooksMainInfoItem,
 	whitepapersMainInfoItem,
-} from "../model/mainInfoItems";
+} from "@/widgets/resources/model/mainInfoItems";
 import LinkWithIcon from "@/shared/ui/LinkWithIcon";
 import TextWrapper from "./TextWrapper";
 import TitleWithDescriptionAndIcon from "@/shared/ui/TitleWithDescriptionAndIcon";
@@ -23,11 +23,13 @@ const MainInfo: FC<MainInfoProps> = ({ content }) => {
 			<EbooksIconSVG
 				width={80}
 				height={80}
+				aria-hidden="true"
 			/>
 		) : (
 			<WhitepapersIconSVG
 				width={80}
 				height={80}
+				aria-hidden="true"
 			/>
 		);
 
@@ -51,7 +53,6 @@ const MainInfo: FC<MainInfoProps> = ({ content }) => {
 				title="10k+ Users"
 				hasImageOrButton="image"
 				imageSrc={data.mainUsersImageSrc}
-				imageAlt="Photos of users"
 			/>
 		</div>
 	);

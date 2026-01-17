@@ -3,7 +3,7 @@ import { type FC } from "react";
 import {
 	ebooksDescriptiveInfoItem,
 	whitepapersDescriptiveInfoItem,
-} from "../model/descriptiveInfoItems";
+} from "@/widgets/resources/model/descriptiveInfoItems";
 import TextWrapper from "./TextWrapper";
 
 type DescriptiveInfoProps = {

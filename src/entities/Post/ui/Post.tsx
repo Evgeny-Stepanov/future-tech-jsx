@@ -39,7 +39,7 @@ const Post: FC<PostProps> = ({
 				<div className="post__author-photo">
 					<img
 						src={authorPhoto}
-						alt={authorName}
+						alt=""
 					/>
 				</div>
 				<div className="post__author-description">

@@ -17,7 +17,8 @@ const ebooksDescriptiveInfoItem: DescriptiveInfoItem = {
 	descriptiveAuthorExpertise:
 		"Ebooks are authored by renowned experts with an average of 15 years of experience.",
 	descriptiveImageSrc: "src/entities/LeadMagnet/ui/ebooks-image.jpg",
-	descriptiveImageAlt: "People sit at desks and study in VR glasses.",
+	descriptiveImageAlt:
+		"A group of students in the library uses VR glasses and laptops for studying.",
 };
 
 const whitepapersDescriptiveInfoItem: DescriptiveInfoItem = {
@@ -29,7 +30,8 @@ const whitepapersDescriptiveInfoItem: DescriptiveInfoItem = {
 	descriptiveAuthorExpertise:
 		"Whitepapers are authored by subject matter experts with an average of 20 years of experience.",
 	descriptiveImageSrc: "src/entities/LeadMagnet/ui/whitepapers-image.jpg",
-	descriptiveImageAlt: "bla bla bla",
+	descriptiveImageAlt:
+		"A hand in a business suit touches a futuristic glowing digital panel.",
 };
 
 export { ebooksDescriptiveInfoItem, whitepapersDescriptiveInfoItem };

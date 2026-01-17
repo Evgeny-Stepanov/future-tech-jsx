@@ -1,10 +1,10 @@
-type AdvantagesItem = {
+type AdvantageItem = {
 	title: string;
 	description: string;
 	href: string;
 };
 
-const advantagesItems: AdvantagesItem[] = [
+const advantageItems: AdvantageItem[] = [
 	{
 		title: "Resource Access",
 		description:
@@ -25,4 +25,4 @@ const advantagesItems: AdvantagesItem[] = [
 	},
 ];
 
-export default advantagesItems;
+export default advantageItems;

@@ -56,8 +56,7 @@ const Hero = () => {
 					<div className="hero__explore-people">
 						<img
 							src={PeoplePNG}
-							alt="Photos of people"
-							aria-hidden="true"
+							alt=""
 						/>
 					</div>
 					<h3 className="h5">Explore 1000+ resources</h3>

@@ -1,0 +1,74 @@
+@use "@/app/styles/helpers" as *;
+
+.stars {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	display: inline-flex;
+	gap: fluid-to-laptop(7, 4);
+	padding: fluid-to-laptop(10, 8) fluid-to-laptop(16, 12);
+	background-color: var(--color-dark-08);
+	border: var(--border);
+	border-radius: 100px;
+	transform: translate(-50%, -50%);
+}
+
+.star {
+	div {
+		@include square(fluid-to-laptop(24, 20));
+
+		svg path {
+			stroke: var(--color-yellow-55);
+		}
+	}
+}
+
+//* I manually selected the width, height, top, left and clip-path percentages to fit the size.
+.stars[data-rating="1.0"] .star:nth-child(-n + 1) svg path,
+.stars[data-rating="1.5"] .star:nth-child(-n + 1) svg path,
+.stars[data-rating="2.0"] .star:nth-child(-n + 2) svg path,
+.stars[data-rating="2.5"] .star:nth-child(-n + 2) svg path,
+.stars[data-rating="3.0"] .star:nth-child(-n + 3) svg path,
+.stars[data-rating="3.5"] .star:nth-child(-n + 3) svg path,
+.stars[data-rating="4.0"] .star:nth-child(-n + 4) svg path,
+.stars[data-rating="4.5"] .star:nth-child(-n + 4) svg path,
+.stars[data-rating="5.0"] .star:nth-child(-n + 5) svg path {
+	fill: var(--color-yellow-55);
+}
+
+.stars[data-rating="0.5"] .star:nth-child(1),
+.stars[data-rating="1.5"] .star:nth-child(2),
+.stars[data-rating="2.5"] .star:nth-child(3),
+.stars[data-rating="3.5"] .star:nth-child(4),
+.stars[data-rating="4.5"] .star:nth-child(5) {
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: -17%;
+		left: -20%;
+		z-index: -1;
+		width: 140%;
+		height: 140%;
+		background: linear-gradient(
+			to right,
+			var(--color-yellow-55) 0%,
+			var(--color-yellow-55) 50%,
+			var(--color-dark-08) 50%,
+			var(--color-dark-08) 100%
+		);
+		clip-path: polygon(
+			50% 16%,
+			60% 35%,
+			80% 40%,
+			70% 55%,
+			70% 80%,
+			50% 70%,
+			30% 80%,
+			30% 55%,
+			20% 40%,
+			40% 30%
+		);
+	}
+}

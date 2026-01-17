@@ -7,7 +7,6 @@ type WrapperWithBorderProps = {
 	description: string;
 	hasImageOrButton?: "image" | "button";
 	imageSrc?: string;
-	imageAlt?: string;
 	linkTitle?: string;
 	href?: string;
 };
@@ -17,7 +16,6 @@ const WrapperWithBorder: FC<WrapperWithBorderProps> = ({
 	description,
 	hasImageOrButton,
 	imageSrc,
-	imageAlt,
 	linkTitle,
 	href,
 }) => {
@@ -30,7 +28,7 @@ const WrapperWithBorder: FC<WrapperWithBorderProps> = ({
 				<div>
 					<img
 						src={imageSrc}
-						alt={imageAlt}
+						alt=""
 					/>
 				</div>
 			)}
