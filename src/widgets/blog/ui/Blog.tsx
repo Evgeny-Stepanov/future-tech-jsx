@@ -18,7 +18,7 @@ const Blog = () => {
 	]);
 
 	const handleTabsParentClick = (
-		event: React.MouseEvent<HTMLUListElement, MouseEvent>
+		event: React.MouseEvent<HTMLUListElement, MouseEvent>,
 	) => {
 		const target = event.target as HTMLElement;
 
@@ -29,7 +29,7 @@ const Blog = () => {
 				setActivePosts(allPosts);
 			} else {
 				setActivePosts(
-					allPosts.filter((post) => post.authorCategory === buttonText)
+					allPosts.filter((post) => post.authorCategory === buttonText),
 				);
 			}
 
@@ -43,7 +43,7 @@ const Blog = () => {
 
 	const handleLikeClick = (postTitle: string) => {
 		const post = postItems.find(
-			(item) => item.postTitle === postTitle
+			(item) => item.postTitle === postTitle,
 		) as PostItem;
 
 		if (likedPosts.includes(post)) {
