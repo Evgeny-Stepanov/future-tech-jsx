@@ -1,7 +1,9 @@
+import Contacts from "@/widgets/contacts";
+
 const ContactsPage = () => {
 	return (
 		<>
-			<h1>Contact Us page</h1>
+			<Contacts />
 		</>
 	);
 };

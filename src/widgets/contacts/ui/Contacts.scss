@@ -1,0 +1,61 @@
+@use "@/app/styles/helpers" as *;
+
+.contacts {
+	&__list {
+		position: relative;
+		display: grid;
+		grid-template-columns: 0.9fr 1fr 1fr 0.9fr;
+
+		@media (width < 1280px) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@include mobile {
+			grid-template-columns: 1fr;
+		}
+
+		.contacts__item:first-child .contact-card {
+			padding-left: 0;
+		}
+
+		.contacts__item:last-child .contact-card {
+			padding-right: 0;
+		}
+	}
+
+	&__item {
+		position: relative;
+
+		&:not(:last-child) {
+			border-right: var(--border);
+
+			@media (width < 1280px) {
+				border-right: none;
+			}
+		}
+
+		@media (width < 1280px) and (width > 767px) {
+			&:nth-child(odd) {
+				border-right: var(--border);
+			}
+		}
+	}
+}
+
+.contacts__list--has-pseudo-bottom,
+.contacts__item--has-pseudo-bottom,
+.contacts__item--has-mobile-pseudo-bottom {
+	&::before {
+		@include full-width-background;
+
+		background-color: transparent;
+		border-top: none;
+	}
+}
+
+.contacts__item--has-pseudo-bottom {
+	&::before {
+		//* I found it by trial and error
+		margin-left: calc((200% - 100vw) / 2);
+	}
+}

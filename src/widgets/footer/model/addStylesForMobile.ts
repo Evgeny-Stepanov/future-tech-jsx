@@ -1,4 +1,4 @@
-import { mobileMediaWidth } from "@/shared/config/globalVariables";
+import { mobileMediaWidth } from "@/shared/config/mediaWidthVariables";
 
 const addStylesForMobile = () => {
 	const footerColumns = document.querySelectorAll(".footer__column");

@@ -3,11 +3,10 @@ import classNames from "classnames";
 import SectionHeader from "@/shared/ui/SectionHeader";
 import { reviewItems } from "../model/reviewItems";
 import Review from "./Review";
+import { tabletAndMobileMediaWidth } from "@/shared/config/mediaWidthVariables";
 
 const Reviews = () => {
 	const desktopMediaWidth = window.matchMedia("(width > 1023px)").matches;
-	const tabletAndMobileMediaWidth =
-		window.matchMedia("(width < 768px)").matches;
 	const columnsCount = desktopMediaWidth ? 3 : 2;
 
 	return (
@@ -31,7 +30,7 @@ const Reviews = () => {
 								starsNumber,
 								description,
 							},
-							index
+							index,
 						) => (
 							<li
 								key={authorName}
@@ -50,7 +49,7 @@ const Reviews = () => {
 									description={description}
 								/>
 							</li>
-						)
+						),
 					)}
 			</ul>
 		</section>

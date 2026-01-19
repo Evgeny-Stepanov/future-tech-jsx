@@ -2,7 +2,7 @@ import "./SectionHeader.scss";
 import { type FC } from "react";
 import LogoWithoutTextSVG from "./logo-without-text.svg?react";
 import LinkWithIcon from "../../LinkWithIcon";
-import { mobileMediaWidth } from "@/shared/config/globalVariables";
+import { mobileMediaWidth } from "@/shared/config/mediaWidthVariables";
 
 type SectionHeaderProps = {
 	preTitle: string;
