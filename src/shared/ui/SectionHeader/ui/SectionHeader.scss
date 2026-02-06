@@ -15,7 +15,7 @@
 
 		//* I found a way to better transfer text to 768 pixels using trial and error.
 		@include tablet {
-			column-gap: fluid(345, 35);
+			column-gap: fluid(200, 60);
 		}
 
 		a {
@@ -99,8 +99,6 @@
 	a {
 		grid-column: 2 / 3;
 		grid-row: 1 / 3;
-		justify-self: end;
-		align-self: center;
 		width: max-content;
 	}
 

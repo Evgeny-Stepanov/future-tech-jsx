@@ -1,9 +1,9 @@
 import "./TitleWithDescriptionAndIcon.scss";
-import { type FC, type ReactElement } from "react";
+import { type FC, type ReactNode } from "react";
 import classNames from "classnames";
 
 type TitleWithDescriptionAndIconProps = {
-	icon: ReactElement;
+	icon: ReactNode;
 	title: string;
 	description: string;
 	isIconWider?: true;

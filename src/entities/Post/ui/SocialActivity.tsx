@@ -77,7 +77,7 @@ const SocialActivity: FC<SocialActivityProps> = ({
 						<TgSVG
 							width={24}
 							height={24}
-							/* I don't know what the designer means by the Telegram icon. */
+							//* I don't know what the designer means by the Telegram icon.
 							aria-label={ariaLabelForActivity}
 						/>
 					</span>

@@ -1,9 +1,9 @@
 import "./LinkCard.scss";
-import { type ElementType, type FC, type ReactElement } from "react";
+import { type ElementType, type FC, type ReactNode } from "react";
 import ArrowTopRightSVG from "@/shared/ui/LinkWithIcon/ui/arrow-top-right.svg?react";
 
 type LinkCardProps = {
-	icon?: ReactElement;
+	icon?: ReactNode;
 	headingTag: "h3" | "h4" | "h5" | "h6";
 	href: string;
 	title: string;
@@ -22,7 +22,7 @@ const LinkCard: FC<LinkCardProps> = ({
 	const getListItemWithBorder = (
 		event:
 			| React.MouseEvent<HTMLAnchorElement, MouseEvent>
-			| React.FocusEvent<HTMLAnchorElement>
+			| React.FocusEvent<HTMLAnchorElement>,
 	) => {
 		const listItem = event.currentTarget.closest("li") as HTMLElement;
 
@@ -33,7 +33,7 @@ const LinkCard: FC<LinkCardProps> = ({
 	};
 
 	const handleMouseOver = (
-		event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+		event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
 	) => {
 		const [listItem, hasBorder] = getListItemWithBorder(event);
 
@@ -43,7 +43,7 @@ const LinkCard: FC<LinkCardProps> = ({
 	};
 
 	const handleMouseOut = (
-		event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+		event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
 	) => {
 		const [listItem, hasBorder] = getListItemWithBorder(event);
 
@@ -70,7 +70,7 @@ const LinkCard: FC<LinkCardProps> = ({
 
 	if (headingTag === "h6" && subtitle) {
 		throw new Error(
-			"The subtitle depends on the parent and is equal to <h> - 1. There is no level 7 heading in HTML."
+			"The subtitle depends on the parent and is equal to <h> - 1. There is no level 7 heading in HTML.",
 		);
 	}
 

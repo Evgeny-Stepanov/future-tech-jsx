@@ -4,33 +4,33 @@
 	&__row {
 		position: relative;
 		display: flex;
-		align-items: center;
 
 		@include tablet {
 			flex-direction: column;
 		}
 
-		&::before {
-			@include full-width-background;
-
-			background-color: transparent;
-			border-top: none;
+		&:first-of-type {
+			background-color: var(--color-dark-08);
 		}
 
-		&:last-child {
+		&:not(:first-of-type) {
 			&::before {
-				display: none;
+				@include full-width-background;
+
+				background-color: transparent;
+				border-bottom: none;
 			}
 		}
 	}
 
 	&__column {
-		padding: fluid-to-laptop(80, 60) 0 fluid-to-laptop(80, 60)
-			fluid-to-laptop(80, 60);
+		padding-block: fluid-to-laptop(80, 60);
 
 		&:first-child {
+			display: flex;
+			align-items: center;
 			width: 37.5%;
-			padding: 0 fluid-to-laptop(80, 60) 0 0;
+			padding-right: fluid-to-laptop(80, 60);
 
 			@include tablet {
 				border-bottom: var(--border);
@@ -39,14 +39,11 @@
 
 		&:last-child {
 			width: 62.5%;
+			padding-left: fluid-to-laptop(80, 60);
 			border-left: var(--border);
 
 			@include tablet {
 				border-left: none;
-			}
-
-			@include mobile-s {
-				padding: 30px 16px !important;
 			}
 		}
 

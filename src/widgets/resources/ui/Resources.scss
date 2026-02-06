@@ -3,14 +3,14 @@
 .resources {
 	&__item {
 		display: grid;
-		grid-template-columns: max-content 1fr;
+		grid-template-columns: 3fr 5fr;
 		align-items: center;
 
 		@include tablet {
 			grid-template-columns: auto;
 		}
 
-		&:first-child {
+		&:not(:last-child) {
 			position: relative;
 
 			&::before {
@@ -18,6 +18,189 @@
 
 				background-color: transparent;
 				border-top: none;
+			}
+		}
+	}
+
+	&__left-column {
+		padding-right: fluid-to-laptop(80, 60);
+
+		@include tablet {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			align-items: center;
+			column-gap: fluid(60, 50);
+			padding: 40px 0;
+		}
+
+		@include mobile {
+			display: block;
+		}
+
+		.title-wrapper {
+			width: fluid-to-laptop(519, 413);
+
+			//* Using trial and error, I found the optimal width for resolutions from 1024 to 1280 pixels.
+			@media (width < 1280px) {
+				width: fluid(530, 40);
+			}
+
+			@include tablet {
+				width: 100%;
+			}
+
+			p {
+				font-size: fluid(20, 14);
+			}
+		}
+
+		.link {
+			justify-self: stretch;
+			align-self: stretch;
+			margin-top: fluid(50, 24);
+
+			@include tablet {
+				grid-column: 1 / 3;
+				width: fit-content;
+			}
+
+			@include mobile-s {
+				width: 100%;
+			}
+		}
+
+		.text-wrapper {
+			justify-content: space-between;
+			align-items: center;
+			justify-self: start;
+			margin-top: fluid(60, 20);
+
+			@media (width < 1100px) and (width > 1023px) {
+				display: flex;
+				flex-direction: column;
+			}
+
+			@include tablet {
+				grid-column: 2 / 3;
+				grid-row: 1 / 2;
+				justify-self: end;
+				margin-top: 0;
+			}
+
+			@include mobile {
+				justify-self: start;
+				margin-top: fluid(60, 20);
+			}
+
+			@include mobile-s {
+				width: 100%;
+			}
+
+			div {
+				@include mobile-s {
+					grid-column: 2 / 3;
+					grid-row: 1 / 3;
+				}
+			}
+		}
+	}
+
+	&__right-column {
+		display: grid;
+		grid-template-columns: auto auto;
+		grid-template-rows: repeat(4, minmax(min-content, max-content));
+		column-gap: fluid-to-laptop(20, 16);
+		row-gap: fluid-to-laptop(30, 24);
+		padding: fluid(80, 40) 0 fluid(80, 40) fluid-to-laptop(80, 60);
+		border-left: var(--border);
+
+		@include tablet {
+			padding: 40px 0;
+			border-top: var(--border);
+			border-left: none;
+		}
+
+		@include mobile {
+			grid-template-columns: auto;
+		}
+
+		&-header {
+			grid-column: 1 / 3;
+			display: flex;
+			align-items: center;
+			gap: fluid(20, 10);
+
+			@include mobile {
+				grid-column: auto;
+				flex-direction: column;
+				align-items: stretch;
+			}
+
+			h4 {
+				flex-shrink: 0;
+				width: fluid-to-laptop(243, 203);
+
+				@include mobile {
+					width: 100%;
+				}
+			}
+		}
+
+		&-image {
+			grid-column: 1 / 3;
+
+			@include mobile {
+				grid-column: auto;
+			}
+
+			img {
+				width: 100%;
+				aspect-ratio: 917 / 332;
+				border-radius: 15px;
+				object-fit: cover;
+			}
+		}
+
+		.text-wrapper {
+			&:nth-child(1 of &),
+			&:last-child {
+				display: flex;
+				flex-direction: column;
+				gap: fluid-to-laptop(4, 2);
+			}
+
+			&:nth-child(2 of &) {
+				a {
+					@include laptop {
+						grid-column: 1 / 3;
+						grid-row: 3 / 4;
+						justify-self: start;
+					}
+
+					@include tablet {
+						grid-column: 2 / 3;
+						grid-row: 1 / 3;
+						justify-self: end;
+					}
+
+					@include mobile-s {
+						grid-column: 1 / 3;
+						grid-row: 3 / 4;
+						justify-self: start;
+					}
+				}
+			}
+
+			&:last-child {
+				grid-column: 1 / 3;
+
+				@include mobile {
+					grid-column: auto;
+				}
+			}
+
+			h4 {
+				font-weight: 500;
 			}
 		}
 	}

@@ -1,15 +1,11 @@
 @use "@/app/styles/helpers" as *;
 
 .link {
+	/* I couldn't get the underline animation to work. It either underlines the entire block, with extra white space on the sides, given the long line and smaller viewport, as it's implemented. Or it underlines each line. */
+
+	justify-self: end;
+	align-self: center;
 	background-color: var(--color-dark-08);
-
-	span {
-		position: relative;
-
-		&::before {
-			@include pseudo-element-underline;
-		}
-	}
 
 	@include hover {
 		color: var(--color-yellow-55);
@@ -69,6 +65,14 @@
 	}
 
 	&:not(.link--has-border) {
+		span {
+			position: relative;
+
+			&::before {
+				@include pseudo-element-underline;
+			}
+		}
+
 		@include hover {
 			span::before {
 				transform: scaleX(1);

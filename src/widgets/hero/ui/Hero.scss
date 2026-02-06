@@ -35,9 +35,10 @@
 	&__statistics {
 		position: relative;
 		grid-column: 1 / 2;
-		display: flex;
-		justify-content: space-between;
-		gap: fluid(50, 20);
+		display: grid;
+		grid-template-columns: 1fr 1.16fr 1fr;
+		//* This is necessary so that the pseudo-element with a left/right border always has a height of 2 lines.
+		grid-auto-rows: 1fr;
 
 		&::before {
 			@include full-width-background;
@@ -52,16 +53,71 @@
 		}
 
 		&-item {
-			width: fluid(248, 98);
+			position: relative;
 			padding-block: fluid(50, 20);
 
-			@include mobile-s {
-				width: 100%;
+			&--has-pseudo-bottom {
+				&::before {
+					@include full-width-background;
+
+					//* I found it by trial and error
+					margin-left: calc((100% - 100vw) / 1);
+					background-color: transparent;
+					border-top: none;
+
+					@include mobile {
+						margin-left: calc((100% - 100vw) / 2);
+					}
+				}
 			}
 
-			&:empty {
-				width: 1px;
-				background-color: var(--color-dark-15);
+			&--has-inline-borders-for-only-row {
+				&::before {
+					@include full-width-background-with-inline-borders;
+
+					height: 100%;
+				}
+			}
+
+			&--has-inline-borders-for-some-rows {
+				&::before {
+					@include full-width-background-with-inline-borders;
+				}
+			}
+
+			&--has-right-border-for-some-rows-on-mobile {
+				&::before {
+					@include full-width-background-with-inline-borders;
+
+					border-left: none;
+				}
+			}
+
+			&--has-left-border-for-some-rows-on-mobile {
+				&::before {
+					@include full-width-background-with-inline-borders;
+
+					border-right: none;
+				}
+			}
+
+			&:nth-child(3n + 1) {
+				padding-right: fluid(50, 20);
+			}
+
+			&:nth-child(3n + 2) {
+				padding-inline: fluid(50, 20);
+			}
+
+			&:nth-child(3n + 3) {
+				padding-left: fluid(50, 20);
+
+				h2,
+				p {
+					@include mobile-above {
+						padding-right: fluid(50, 20);
+					}
+				}
 			}
 
 			h2 {
@@ -84,7 +140,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: end;
-		padding: fluid(395, 100) 0 fluid(80, 40) fluid(80, 40);
+		padding: fluid(395, 100) 0 fluid(80, 40) fluid(80, 24);
 		background:
 			linear-gradient(rgba(#141414, 0), rgba(#141414, 1)),
 			url("./background.png") top left/cover no-repeat;
@@ -93,15 +149,22 @@
 		@include mobile {
 			grid-column: 1 / 2;
 			grid-row: auto;
+			padding-right: fluid(80, 24);
 			border-left: none;
 		}
 
 		&-people {
 			display: inline-block;
+			width: fluid(218, 134);
+			height: fluid(80, 56);
 			padding: 10px;
 			background-color: var(--color-dark-10);
 			border: var(--border);
 			border-radius: 100px;
+
+			img {
+				@include round-image;
+			}
 		}
 
 		h3 {

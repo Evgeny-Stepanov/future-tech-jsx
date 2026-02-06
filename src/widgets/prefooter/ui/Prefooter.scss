@@ -43,7 +43,10 @@
 
 		p {
 			margin-top: fluid(20, 10);
+		}
 
+		p,
+		.link-card h3 {
 			@include tablet {
 				text-align: center;
 			}

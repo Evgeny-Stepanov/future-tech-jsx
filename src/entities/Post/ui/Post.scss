@@ -6,7 +6,7 @@
 	grid-template-columns:
 		minmax(203px, fluid-to-laptop(384, 305))
 		1fr minmax(127px, 168px);
-	column-gap: fluid(50, 24);
+	column-gap: fluid(50, 33);
 	padding-block: fluid(80, 40);
 
 	@media (width <= 1280px) {
@@ -49,6 +49,10 @@
 			@include square(fluid-to-laptop(80, 60));
 
 			flex-shrink: 0;
+
+			img {
+				@include round-image;
+			}
 		}
 	}
 
@@ -80,10 +84,7 @@
 	}
 
 	a {
-		align-self: center;
-
 		@include tablet {
-			justify-self: end;
 			width: fit-content;
 		}
 	}

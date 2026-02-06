@@ -3,12 +3,13 @@
 .hero__cards {
 	position: relative;
 	grid-column: 1 / 3;
-	display: flex;
-	gap: fluid-to-laptop(80, 50);
+	display: grid;
+	grid-template-columns: 6fr 7fr 6fr;
+	//* This is necessary so that the pseudo-element with a left/right border always has a height of 2 lines.
+	grid-auto-rows: 1fr;
 
 	@include mobile {
-		flex-direction: column;
-		gap: 0;
+		grid-template-columns: 1fr;
 	}
 
 	&::before {
@@ -18,21 +19,51 @@
 	}
 
 	&-item {
-		width: fluid-to-laptop(425, 360);
+		position: relative;
 		padding-block: fluid(50, 30);
 
 		@include mobile {
-			width: 100%;
+			&:not(:last-child) {
+				border-bottom: var(--border);
+			}
 		}
 
-		&:empty {
-			width: 1px;
-			padding: 0;
-			background-color: var(--color-dark-15);
+		&--has-pseudo-bottom {
+			&::before {
+				@include full-width-background;
 
-			@include mobile {
-				width: 100%;
-				height: 1px;
+				background-color: transparent;
+				border-top: none;
+			}
+		}
+
+		&--has-right-border {
+			&::before {
+				@include full-width-background-with-inline-borders;
+
+				border-left: none;
+			}
+		}
+
+		&--has-left-border {
+			&::before {
+				@include full-width-background-with-inline-borders;
+
+				border-right: none;
+			}
+		}
+
+		@include mobile-above {
+			&:nth-child(3n + 1) {
+				padding-right: fluid-to-laptop(80, 50);
+			}
+
+			&:nth-child(3n + 2) {
+				padding-inline: fluid-to-laptop(80, 50);
+			}
+
+			&:nth-child(3n + 3) {
+				padding-left: fluid-to-laptop(80, 50);
 			}
 		}
 
@@ -41,9 +72,7 @@
 		}
 
 		.link-card > div {
-			@include tablet {
-				align-items: start;
-			}
+			align-items: start;
 
 			@include mobile {
 				align-items: center;

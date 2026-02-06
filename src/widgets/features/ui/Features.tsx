@@ -1,83 +1,72 @@
 import "./Features.scss";
 import TitleWithDescriptionAndIcon from "@/shared/ui/TitleWithDescriptionAndIcon";
-import {
-	techBlogFeatureItems,
-	insightBlogFeatureItems,
-} from "../model/featureItems";
-import TechBlogIconSVG from "./tech-blog-icon.svg?react";
-import InsightBlogIconSVG from "./insight-blog-icon.svg?react";
+import featureItems from "../model/featureItems";
 import SectionHeader from "@/shared/ui/SectionHeader";
 
-const Features = () => {
-	const TechBlogIcon = (
-		<TechBlogIconSVG
-			width={80}
-			height={80}
-			aria-hidden="true"
-		/>
-	);
-	const InsightBlogIcon = (
-		<InsightBlogIconSVG
-			width={93}
-			height={80}
-			aria-hidden="true"
-		/>
-	);
+const featuresIcons = import.meta.glob("./*.svg", {
+	query: "?react",
+	import: "default",
+	eager: true,
+}) as Record<string, React.FC<React.SVGProps<SVGSVGElement>>>;
 
+const Features = () => {
 	return (
 		<section className="features">
 			<SectionHeader
 				preTitle="Unlock the Power of"
 				title="FutureTech Features"
 			/>
-			<div className="features__row">
-				<div className="features__column">
-					<TitleWithDescriptionAndIcon
-						icon={TechBlogIcon}
-						title="Future Technology Blog"
-						description="Stay informed with our blog section dedicated to future technology."
-					/>
-				</div>
 
-				<div className="features__column">
-					<ul className="features__list">
-						{techBlogFeatureItems.map(({ title, description }) => (
-							<li
-								key={title}
-								className="features__item"
-							>
-								<h4 className="h5">{title}</h4>
-								<p>{description}</p>
-							</li>
-						))}
-					</ul>
-				</div>
-			</div>
+			{featureItems.map((item) => {
+				const {
+					iconPath,
+					title,
+					description,
+					iconWidth = 80,
+					iconHeight = 80,
+					isIconWider = undefined,
+				} = item.leftColumn;
 
-			<div className="features__row">
-				<div className="features__column">
-					<TitleWithDescriptionAndIcon
-						icon={InsightBlogIcon}
-						title="Research Insights Blogs"
-						description="Dive deep into future technology concepts with our research section."
-						isIconWider
-					/>
-				</div>
+				const IconComponent = featuresIcons[iconPath];
 
-				<div className="features__column">
-					<ul className="features__list">
-						{insightBlogFeatureItems.map(({ title, description }) => (
-							<li
-								key={title}
-								className="features__item"
-							>
-								<h4 className="h5">{title}</h4>
-								<p>{description}</p>
-							</li>
-						))}
-					</ul>
-				</div>
-			</div>
+				return (
+					<div
+						className="features__row"
+						key={title}
+					>
+						<div className="features__column">
+							<TitleWithDescriptionAndIcon
+								icon={
+									IconComponent ? (
+										<IconComponent
+											width={iconWidth}
+											height={iconHeight}
+											aria-hidden="true"
+										/>
+									) : null
+								}
+								title={title}
+								description={description}
+								isIconWider={isIconWider}
+							/>
+						</div>
+
+						<div className="features__column">
+							<ul className="features__list">
+								{item.rightColumn.map(({ title, description }) => (
+									<li
+										key={title}
+										className="features__item"
+									>
+										<h4 className="h5">{title}</h4>
+										<p>{description}</p>
+									</li>
+								))}
+							</ul>
+						</div>
+					</div>
+				);
+			})}
 		</section>
 	);
 };

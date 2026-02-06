@@ -3,7 +3,11 @@
 .footer {
 	&__grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(169px, 1fr));
+		//* To have a maximum of 5 columns as in the layout
+		grid-template-columns: repeat(
+			auto-fill,
+			minmax(max(169px, (100% - (4 * fluid(80, 20))) / 5), 1fr)
+		);
 		gap: fluid(80, 20);
 		padding-block: fluid(80, 40);
 	}
@@ -28,6 +32,12 @@
 		display: flex;
 		flex-direction: column;
 		gap: fluid(18, 8);
+
+		li {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
 	}
 
 	&__link {
@@ -77,15 +87,17 @@
 	}
 
 	.copyright {
-		display: flex;
-		justify-content: space-between;
-		gap: 20px;
+		display: grid;
+		grid-template-columns: 1fr max-content 1fr;
+		align-items: center;
+		column-gap: 100px;
 		padding-block: fluid-to-laptop(40, 24);
 		color: var(--color-dark-40);
 
 		@include tablet {
-			flex-direction: column;
-			align-items: center;
+			grid-template-columns: 1fr;
+			justify-items: center;
+			row-gap: 20px;
 		}
 
 		ul {
@@ -93,11 +105,13 @@
 		}
 
 		&__links {
-			gap: fluid-to-laptop(11, 8);
+			li:first-child {
+				padding-right: 11px;
+				border-right: var(--border);
+			}
 
-			li:empty {
-				width: 1px;
-				background-color: var(--color-dark-15);
+			li:last-child {
+				padding-left: 11px;
 			}
 
 			&-link {
@@ -122,6 +136,7 @@
 		}
 
 		&__socials {
+			flex-shrink: 0;
 			flex-wrap: wrap;
 			gap: fluid-to-laptop(20, 14);
 
@@ -145,6 +160,14 @@
 						fill: var(--color-yellow-55);
 					}
 				}
+			}
+		}
+
+		p {
+			justify-self: end;
+
+			@include tablet {
+				justify-self: initial;
 			}
 		}
 	}

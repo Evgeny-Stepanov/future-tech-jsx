@@ -121,7 +121,6 @@ const footerItems: FooterItem[] = [
 				href: "/",
 			},
 		],
-		newLabel: ["AI Revolution"],
 	},
 
 	{

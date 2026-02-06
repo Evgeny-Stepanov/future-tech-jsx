@@ -36,7 +36,7 @@
 	&--is-active {
 		div {
 			span:first-child {
-				translate: 0 14px;
+				translate: 0 13px;
 				rotate: 45deg;
 
 				@include mobile-s {

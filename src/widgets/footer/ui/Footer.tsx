@@ -63,7 +63,6 @@ const Footer = () => {
 							Terms & Conditions
 						</a>
 					</li>
-					<li aria-hidden="true"></li>
 					<li>
 						<a
 							href="/"
@@ -73,7 +72,6 @@ const Footer = () => {
 						</a>
 					</li>
 				</ul>
-
 				<ul className="copyright__socials">
 					<li>
 						<a
@@ -118,7 +116,6 @@ const Footer = () => {
 						</a>
 					</li>
 				</ul>
-
 				<p>© 2024 FutureTech. All rights reserved.</p>
 			</div>
 		</footer>
