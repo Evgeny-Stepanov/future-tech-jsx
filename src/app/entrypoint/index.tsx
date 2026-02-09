@@ -1,3 +1,4 @@
+import "react-phone-number-input/style.css";
 import "@/app/styles";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
@@ -49,5 +50,5 @@ createRoot(document.getElementById("root")!).render(
 				</Route>
 			</Routes>
 		</BrowserRouter>
-	</StrictMode>
+	</StrictMode>,
 );
