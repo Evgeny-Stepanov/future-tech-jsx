@@ -2,60 +2,83 @@
 
 .contacts {
 	&__list {
-		position: relative;
 		display: grid;
-		grid-template-columns: 0.9fr 1fr 1fr 0.9fr;
+		grid-template-columns:
+			minmax(0, 0.9fr) minmax(0, 1fr)
+			minmax(0, 1fr)
+			minmax(0, 0.9fr);
 
-		@media (width < 1280px) {
+		@include tablet {
 			grid-template-columns: 1fr 1fr;
 		}
 
 		@include mobile {
 			grid-template-columns: 1fr;
 		}
-
-		.contacts__item:first-child .contact-card {
-			padding-left: 0;
-		}
-
-		.contacts__item:last-child .contact-card {
-			padding-right: 0;
-		}
 	}
 
 	&__item {
 		position: relative;
+		padding: fluid(80, 20) fluid-to-laptop(50, 30);
 
-		&:not(:last-child) {
-			border-right: var(--border);
+		@include tablet-above {
+			&:nth-child(4n + 1) {
+				padding-left: 0;
+			}
 
-			@media (width < 1280px) {
+			&:nth-child(4n + 4) {
+				padding-right: 0;
+			}
+		}
+
+		@include tablet {
+			&:nth-child(odd) {
+				padding-left: 0;
+			}
+
+			&:nth-child(even) {
+				padding-right: 0;
+			}
+		}
+
+		@include mobile {
+			padding-inline: 0;
+
+			&:not(:last-child) {
+				border-bottom: var(--border);
+			}
+		}
+
+		&--has-pseudo-bottom {
+			&::before {
+				@include full-width-background;
+
+				margin-left: calc((200% - 100vw) / 2);
+				background-color: transparent;
+				border-top: none;
+			}
+		}
+
+		&--has-left-border-on-desktop,
+		&--has-inline-borders-on-desktop,
+		&--has-left-border-on-tablet {
+			&::before {
+				@include full-width-background-with-inline-borders;
+
+				height: 300%;
+			}
+		}
+
+		&--has-left-border-on-desktop {
+			&::before {
+				border-left: none;
+			}
+		}
+
+		&--has-left-border-on-tablet {
+			&::before {
 				border-right: none;
 			}
 		}
-
-		@media (width < 1280px) and (width > 767px) {
-			&:nth-child(odd) {
-				border-right: var(--border);
-			}
-		}
-	}
-}
-
-.contacts__list--has-pseudo-bottom,
-.contacts__item--has-pseudo-bottom,
-.contacts__item--has-mobile-pseudo-bottom {
-	&::before {
-		@include full-width-background;
-
-		background-color: transparent;
-		border-top: none;
-	}
-}
-
-.contacts__item--has-pseudo-bottom {
-	&::before {
-		//* I found it by trial and error
-		margin-left: calc((200% - 100vw) / 2);
 	}
 }

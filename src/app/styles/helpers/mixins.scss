@@ -64,6 +64,13 @@
 	cursor: not-allowed;
 }
 
+@mixin round-image {
+	width: 100%;
+	height: 100%;
+	border-radius: 100px;
+	object-fit: cover;
+}
+
 @mixin full-width-background {
 	content: "";
 	position: absolute;
@@ -78,10 +85,23 @@
 	border-bottom: var(--border);
 }
 
+@mixin full-width-background-with-inline-borders {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 200%;
+	border-left: var(--border);
+	border-right: var(--border);
+}
+
 @mixin pseudo-element-underline {
 	content: "";
 	position: absolute;
 	bottom: 0;
+	left: 0;
 	width: 100%;
 	height: 1px;
 	background-color: var(--color-yellow-55);

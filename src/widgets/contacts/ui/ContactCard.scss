@@ -3,43 +3,31 @@
 .contact-card {
 	display: flex;
 	flex-direction: column;
-	padding: fluid(80, 20) fluid-to-laptop(50, 30);
 
 	@include mobile {
-		display: block;
-		padding-inline: 0;
+		align-items: center;
+	}
+
+	h2 {
+		margin-bottom: fluid(50, 20);
 	}
 
 	.link {
 		width: fit-content;
-		white-space: nowrap;
-	}
 
-	&__socials,
-	h2 + .link,
-	p {
-		margin-top: fluid(50, 20);
-
-		@include mobile {
-			margin-right: fluid(50, 20);
-		}
-	}
-
-	.link + .link,
-	p + .link {
-		margin-top: fluid-to-laptop(15, 10);
-
-		@include mobile {
-			margin-top: fluid(50, 20);
+		&:not(:first-of-type) {
+			margin-top: fluid-to-laptop(15, 10);
 		}
 	}
 
 	p {
+		margin-bottom: fluid-to-laptop(15, 10);
 		font-size: fluid(18, 16);
 	}
 
 	&__socials {
 		display: inline-flex;
+		flex-wrap: wrap;
 		gap: fluid-to-laptop(20, 10);
 
 		&-link {
@@ -49,10 +37,6 @@
 
 			@include laptop {
 				padding-inline: 32px;
-			}
-
-			@include mobile {
-				padding-inline: 38px;
 			}
 
 			@include hover {
