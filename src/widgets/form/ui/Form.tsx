@@ -6,6 +6,8 @@ import * as z from "zod";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 import Button from "@/shared/ui/Button";
 import IconSVG from "./icon.svg?react";
+import setContactsHeaderPaddingTop from "@/shared/utils/setContactsHeaderPaddingTop";
+import { useRef, useEffect } from "react";
 
 const Form = () => {
 	const formSchema = z.object({
@@ -75,9 +77,29 @@ const Form = () => {
 		reset();
 	};
 
+	const headerRef = useRef<HTMLElement>(null);
+	useEffect(() => {
+		const handleResize = () => {
+			if (!headerRef.current) return;
+
+			if (window.innerWidth >= 1300) {
+				setContactsHeaderPaddingTop(headerRef.current);
+			} else {
+				headerRef.current.style.removeProperty("padding-block");
+			}
+		};
+
+		handleResize();
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
+
 	return (
 		<section className="form">
-			<header className="form__header">
+			<header
+				className="form__header"
+				ref={headerRef}
+			>
 				<div>
 					<IconSVG
 						width={80}

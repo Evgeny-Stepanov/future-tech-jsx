@@ -18,10 +18,12 @@
 
 	&__header {
 		width: 37.5%;
-		padding: 15% fluid-to-laptop(80, 60) 0 0;
+		height: fit-content;
+		padding-right: fluid-to-laptop(80, 60);
 
 		@media (width < 1300px) {
 			width: 100%;
+			height: auto;
 			padding: fluid(108, 40) 0 fluid(108, 40) 0;
 			text-align: center;
 			border-bottom: var(--border);
@@ -219,6 +221,7 @@
 
 	&__item:has(input[type="checkbox"]) {
 		align-items: flex-start;
+		align-self: center;
 
 		div {
 			display: flex;
