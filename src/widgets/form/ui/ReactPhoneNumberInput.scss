@@ -1,0 +1,44 @@
+@use "@/app/styles/helpers" as *;
+
+.PhoneInputCountry {
+	margin-right: fluid-to-laptop(16, 12);
+	padding: fluid-to-laptop(17, 12) fluid-to-laptop(18, 12);
+	background-color: var(--color-dark-10);
+	border: var(--border);
+	border-radius: var(--border-radius-s);
+	transition: var(--transition-duration);
+
+	@include laptop {
+		border-radius: var(--border-radius-xs);
+	}
+
+	&:focus-within {
+		border-color: var(--color-yellow-55);
+	}
+}
+
+.PhoneInputCountrySelect:focus + .PhoneInputCountryIcon--border {
+	box-shadow: none;
+}
+
+.PhoneInputCountryIcon {
+	@include square(fluid-to-laptop(34, 30));
+
+	margin-right: fluid-to-laptop(12, 9);
+	background-color: transparent;
+	box-shadow: none;
+}
+
+.PhoneInputCountryIconImg {
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.PhoneInputCountrySelectArrow {
+	width: 12px;
+	height: 12px;
+	border-color: var(--color-white);
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+	opacity: 1;
+}

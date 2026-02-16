@@ -1,7 +1,13 @@
+import Accordion from "@/widgets/accordion";
+import Contacts from "@/widgets/contacts";
+import Form from "@/widgets/form";
+
 const ContactsPage = () => {
 	return (
 		<>
-			<h1>Contact Us page</h1>
+			<Contacts />
+			<Form />
+			<Accordion />
 		</>
 	);
 };

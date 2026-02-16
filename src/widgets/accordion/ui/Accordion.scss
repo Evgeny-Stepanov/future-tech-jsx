@@ -1,0 +1,172 @@
+@use "@/app/styles/helpers" as *;
+
+.accordion {
+	@mixin minus {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 16px;
+		height: 2px;
+		background-color: var(--color-white);
+		translate: -50% -50%;
+		transition-duration: var(--transition-duration-longer);
+	}
+
+	display: flex;
+
+	@include tablet {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__header {
+		width: 37.5%;
+		height: fit-content;
+		padding-right: fluid-to-laptop(80, 60);
+
+		@include tablet {
+			width: 100%;
+			height: auto;
+			padding: fluid(108, 40) 0 fluid(108, 40) 0;
+			text-align: center;
+			border-bottom: var(--border);
+		}
+
+		@include mobile-s {
+			text-align: initial;
+		}
+
+		> div {
+			@include square(fluid(80, 50));
+
+			@include tablet {
+				margin: 0 auto;
+			}
+
+			@include mobile-s {
+				margin: 0;
+			}
+		}
+
+		h2,
+		.link {
+			margin-top: fluid(50, 24);
+		}
+
+		h2 {
+			font-size: fluid(40, 20);
+		}
+
+		p {
+			margin-top: fluid(30, 6);
+		}
+
+		.link {
+			width: fit-content;
+
+			@include mobile-s {
+				width: 100%;
+			}
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		width: 62.5%;
+		gap: fluid(30, 20);
+		padding: fluid(80, 40) 0 fluid(80, 40) fluid(80, 40);
+		border-left: var(--border);
+
+		@include tablet {
+			width: 80%;
+			padding-left: 0;
+			border-left: none;
+		}
+
+		@include mobile-s {
+			width: 100%;
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: fluid-to-laptop(34, 24);
+		background-color: var(--color-dark-10);
+		border: var(--border);
+		border-radius: var(--border-radius-l);
+		user-select: none;
+		cursor: pointer;
+
+		@include laptop {
+			border-radius: var(--border-radius-m);
+		}
+
+		div:first-child {
+			display: flex;
+			justify-content: space-between;
+			gap: 20px;
+			padding-bottom: fluid(24, 16);
+		}
+
+		p {
+			min-height: 0;
+		}
+
+		button {
+			@include square(fluid-to-laptop(24, 20));
+
+			position: relative;
+			flex-shrink: 0;
+			background-color: transparent;
+
+			&::before {
+				@include minus;
+
+				background-color: var(--color-yellow-55);
+			}
+
+			&::after {
+				@include minus;
+
+				background-color: var(--color-yellow-55);
+				rotate: 90deg;
+			}
+		}
+
+		&--is-open {
+			.accordion__text-wrapper {
+				grid-template-rows: 1fr;
+				visibility: visible;
+				border-top: var(--border);
+			}
+
+			p {
+				margin-top: fluid(24, 16);
+			}
+
+			button {
+				&::before {
+					@include minus;
+				}
+
+				&::after {
+					@include minus;
+
+					rotate: 0deg;
+				}
+			}
+		}
+	}
+
+	&__text-wrapper {
+		display: grid;
+		grid-template-rows: 0fr;
+		visibility: hidden;
+		overflow: hidden;
+		transition: grid-template-rows var(--transition-duration-longer);
+	}
+}

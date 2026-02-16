@@ -1,0 +1,84 @@
+@use "@/app/styles/helpers" as *;
+
+.contacts {
+	&__list {
+		display: grid;
+		grid-template-columns:
+			minmax(0, 0.9fr) minmax(0, 1fr)
+			minmax(0, 1fr)
+			minmax(0, 0.9fr);
+
+		@include tablet {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@include mobile {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__item {
+		position: relative;
+		padding: fluid(80, 20) fluid-to-laptop(50, 30);
+
+		@include tablet-above {
+			&:nth-child(4n + 1) {
+				padding-left: 0;
+			}
+
+			&:nth-child(4n + 4) {
+				padding-right: 0;
+			}
+		}
+
+		@include tablet {
+			&:nth-child(odd) {
+				padding-left: 0;
+			}
+
+			&:nth-child(even) {
+				padding-right: 0;
+			}
+		}
+
+		@include mobile {
+			padding-inline: 0;
+
+			&:not(:last-child) {
+				border-bottom: var(--border);
+			}
+		}
+
+		&--has-pseudo-bottom {
+			&::before {
+				@include full-width-background;
+
+				margin-left: calc((200% - 100vw) / 2);
+				background-color: transparent;
+				border-top: none;
+			}
+		}
+
+		&--has-left-border-on-desktop,
+		&--has-inline-borders-on-desktop,
+		&--has-left-border-on-tablet {
+			&::before {
+				@include full-width-background-with-inline-borders;
+
+				height: 300%;
+			}
+		}
+
+		&--has-left-border-on-desktop {
+			&::before {
+				border-left: none;
+			}
+		}
+
+		&--has-left-border-on-tablet {
+			&::before {
+				border-right: none;
+			}
+		}
+	}
+}
