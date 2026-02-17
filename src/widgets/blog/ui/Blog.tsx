@@ -25,6 +25,8 @@ const Blog = () => {
 		if (target.matches("button")) {
 			const buttonText = target.textContent;
 
+			if (!buttonText) return;
+
 			if (buttonText === "All") {
 				setActivePosts(allPosts);
 			} else {

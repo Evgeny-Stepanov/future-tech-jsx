@@ -1,15 +1,15 @@
 import getCSSRootVariableValue from "@/shared/utils/getCSSRootVariableValue";
 
 const closeMobileMenu = (
-	event: PointerEvent,
+	event: MouseEvent,
 	mobileMenu: HTMLDialogElement,
 	mobileMenuCloseButton: HTMLButtonElement,
-	burgerButton: HTMLButtonElement
+	burgerButton: HTMLButtonElement,
 ) => {
 	const target = event.target as HTMLElement;
 
 	const transitionDuration = parseFloat(
-		getCSSRootVariableValue("--transition-duration-longer")
+		getCSSRootVariableValue("--transition-duration-longer"),
 	);
 
 	const clickOnCloseButton =
@@ -33,7 +33,7 @@ const closeMobileMenu = (
 				mobileMenu.classList.remove("fade-in-left", "fade-in-right");
 				clearTimeout(mobileMenuTimerId);
 			},
-			transitionDuration * 1_000 - 50
+			transitionDuration * 1_000 - 50,
 		);
 	}
 };
