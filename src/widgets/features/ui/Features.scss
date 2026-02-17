@@ -10,6 +10,7 @@
 		}
 
 		&:first-of-type {
+			//* Needed for the pseudo borders of the items of the top block
 			background-color: var(--color-dark-08);
 		}
 

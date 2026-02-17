@@ -37,8 +37,6 @@
 		grid-column: 1 / 2;
 		display: grid;
 		grid-template-columns: 1fr 1.16fr 1fr;
-		//* This is necessary so that the pseudo-element with a left/right border always has a height of 2 lines.
-		grid-auto-rows: 1fr;
 
 		&::before {
 			@include full-width-background;

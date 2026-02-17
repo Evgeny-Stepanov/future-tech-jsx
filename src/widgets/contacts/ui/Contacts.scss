@@ -64,8 +64,6 @@
 		&--has-left-border-on-tablet {
 			&::before {
 				@include full-width-background-with-inline-borders;
-
-				height: 300%;
 			}
 		}
 

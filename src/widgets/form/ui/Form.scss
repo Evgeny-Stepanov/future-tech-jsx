@@ -12,7 +12,7 @@
 	&::before {
 		@include full-width-background;
 
-		//* Needed for the pseudo-left border of the items of the top block
+		//* Needed for the pseudo borders of the items of the top block
 		background-color: var(--color-dark-08);
 	}
 

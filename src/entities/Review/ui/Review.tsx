@@ -1,6 +1,6 @@
 import "./Review.scss";
 import { type FC } from "react";
-import { type ReviewItem } from "../model/reviewItems";
+import { type ReviewItem } from "@/widgets/reviews/model/reviewItems";
 import Stars from "./Stars";
 
 const Review: FC<ReviewItem> = ({

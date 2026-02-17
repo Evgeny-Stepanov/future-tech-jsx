@@ -4,7 +4,7 @@ import PeoplePNG from "./people.png";
 import HeroCards from "./HeroCards";
 import statisticItems from "../model/statisticItems";
 import classNames from "classnames";
-import { tabletAndMobileMediaWidth } from "@/shared/config/globalVariables";
+import { tabletAndMobileMediaWidth } from "@/shared/config/mediaWidthVariables";
 
 const Hero = () => {
 	const statisticsColumnCount = 3;

@@ -1,6 +1,9 @@
 @use "@/app/styles/helpers" as *;
 
 .footer {
+	//* Needed for the pseudo borders of the items of the top block
+	background-color: var(--color-dark-08);
+
 	&__grid {
 		display: grid;
 		//* To have a maximum of 5 columns as in the layout

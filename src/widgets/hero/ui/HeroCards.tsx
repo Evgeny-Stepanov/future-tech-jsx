@@ -1,7 +1,7 @@
 import "./HeroCards.scss";
 import cardItems from "../model/cardItems";
 import LinkCard from "@/shared/ui/LinkCard";
-import { tabletAndMobileMediaWidth } from "@/shared/config/globalVariables";
+import { tabletAndMobileMediaWidth } from "@/shared/config/mediaWidthVariables";
 import classNames from "classnames";
 
 const heroCardsIcons = import.meta.glob("./*.svg", {

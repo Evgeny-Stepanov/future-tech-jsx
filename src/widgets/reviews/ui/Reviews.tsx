@@ -2,11 +2,11 @@ import "./Reviews.scss";
 import classNames from "classnames";
 import SectionHeader from "@/shared/ui/SectionHeader";
 import { reviewItems } from "../model/reviewItems";
-import Review from "./Review";
+import Review from "@/entities/Review";
 import {
 	desktopMediaWidth,
 	tabletAndMobileMediaWidth,
-} from "@/shared/config/globalVariables";
+} from "@/shared/config/mediaWidthVariables";
 
 const Reviews = () => {
 	const reviewsColumnCount = desktopMediaWidth ? 3 : 2;
