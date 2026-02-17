@@ -1,69 +1,25 @@
-# React + TypeScript + Vite
+# Future Tech
+## Описание проекта
+Статичный (client-side) многостраничный веб-сайт на TSX, React'а - минимум, реализованный как SPA.
+## Стек технологий
+SCSS, FSD (Feature-Sliced Design), TS, TSX, React, React Router, React Hook Form, React Phone Number Input, Vite.
+## Итог
+**Получилось:**
+- [x] Верстка с помощью TSX, отрисовка через .map
+- [x] Компонентный подход
+- [x] FSD структура
+- [x] Применение TypeScript 
+- [x] SPA навигация с помощью React Router
+- [x] Валидация формы с помощью React Hook Form
+- [x] Выбор кода страны и форматирование номера телефона с помощью React Phone Number Input
+- [x] Добавление accessibility: ARIA-атрибуты, навигация с клавиатуры
+- [x] Тестирование верстки контентом
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Не получилось:**
+- [ ] Не попробовал возможности React'а, кроме синтаксиса TSX и немного useState + useEffect
+- [ ] Не до конца понятна FSD, что относить к entities и features в плане landing page
+- [ ] Атомарность коммитов: слишком большие изменения в одном коммите
+- [ ] Не поработал с асинхронным кодом, с запросами и обработкой ответов от сервера
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Проектом доволен. Местами применил «костыли» — в основном для простроения сетки и границ на всю ширину при разном количестве элементов. Умышленно отходил от макета в тех местах, где не согласен с решениями дизайнера. Протестировал верстку на переполнение текстом и когда текста слишком мало.<br/>
+Ссылка на макет: [AI Blog Website UI Template](https://www.figma.com/community/file/1319753406624336081/ai-blog-website-ui-template-dark-theme-produce-ui).
