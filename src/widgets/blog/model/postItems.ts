@@ -1,3 +1,7 @@
+import johnTechsonPhoto from "../ui/john-techson.png";
+import sarahEthicistPhoto from "../ui/sarah-ethicist.png";
+import astronomerXPhoto from "../ui/astronomer-x.png";
+
 type PostItem = {
 	authorPhoto: string;
 	authorName: string;
@@ -12,7 +16,7 @@ type PostItem = {
 
 const postItems: PostItem[] = [
 	{
-		authorPhoto: "src/widgets/blog/ui/john-techson.png",
+		authorPhoto: johnTechsonPhoto,
 		authorName: "John Techson",
 		authorCategory: "Quantum Computing",
 		postDate: "2023-10-15",
@@ -25,7 +29,7 @@ const postItems: PostItem[] = [
 	},
 
 	{
-		authorPhoto: "src/widgets/blog/ui/sarah-ethicist.png",
+		authorPhoto: sarahEthicistPhoto,
 		authorName: "Sarah Ethicist",
 		authorCategory: "AI Ethics",
 		postDate: "2023-11-05",
@@ -38,7 +42,7 @@ const postItems: PostItem[] = [
 	},
 
 	{
-		authorPhoto: "src/widgets/blog/ui/astronomer-x.png",
+		authorPhoto: astronomerXPhoto,
 		authorName: "Astronomer X",
 		authorCategory: "Space Exploration",
 		postDate: "2023-12-10",

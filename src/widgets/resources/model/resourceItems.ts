@@ -1,3 +1,8 @@
+import ebooksUsersImage from "../ui/ebooks-users.png";
+import ebooksImage from "../ui/ebooks-image.jpg";
+import whitepapersUsersImage from "../ui/whitepapers-users.png";
+import whitepapersImage from "../ui/whitepapers-image.jpg";
+
 type ResourceItem = {
 	leftColumn: {
 		iconPath: string;
@@ -25,7 +30,7 @@ const resourceItems: ResourceItem[] = [
 			description:
 				"Explore our collection of ebooks covering a wide spectrum of future technology topics.",
 			buttonText: "Download Ebooks Now",
-			usersImageSrc: "src/widgets/resources/ui/ebooks-users.png",
+			usersImageSrc: ebooksUsersImage,
 		},
 
 		rightColumn: {
@@ -36,7 +41,7 @@ const resourceItems: ResourceItem[] = [
 			totalNumber: "Over 100 ebooks",
 			authorExpertise:
 				"Ebooks are authored by renowned experts with an average of 15 years of experience.",
-			imageSrc: "src/widgets/resources/ui/ebooks-image.jpg",
+			imageSrc: ebooksImage,
 			imageAlt:
 				"A group of students in the library uses VR glasses and laptops for studying.",
 		},
@@ -49,7 +54,7 @@ const resourceItems: ResourceItem[] = [
 			description:
 				"Dive into comprehensive reports and analyses with our collection of whitepapers.",
 			buttonText: "Download Whitepapers Now",
-			usersImageSrc: "src/widgets/resources/ui/whitepapers-users.png",
+			usersImageSrc: whitepapersUsersImage,
 		},
 
 		rightColumn: {
@@ -60,7 +65,7 @@ const resourceItems: ResourceItem[] = [
 			totalNumber: "Over 50 whitepapers",
 			authorExpertise:
 				"Whitepapers are authored by subject matter experts with an average of 20 years of experience.",
-			imageSrc: "src/widgets/resources/ui/whitepapers-image.jpg",
+			imageSrc: whitepapersImage,
 			imageAlt:
 				"A hand in a business suit touches a futuristic glowing digital panel.",
 		},

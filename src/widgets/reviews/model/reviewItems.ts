@@ -1,3 +1,10 @@
+import sarahThompsonPhoto from "../ui/sarah-thompson.png";
+import rajPatelPhoto from "../ui/raj-patel.png";
+import emilyAdamsPhoto from "../ui/emily-adams.png";
+import alanJacksonPhoto from "../ui/alan-jackson.png";
+import jessicaMillerPhoto from "../ui/jessica-miller.png";
+import diegoLopezPhoto from "../ui/diego-lopez.png";
+
 type ReviewItem = {
 	authorPhoto: string;
 	authorName: string;
@@ -8,7 +15,7 @@ type ReviewItem = {
 
 const reviewItems: ReviewItem[] = [
 	{
-		authorPhoto: "src/widgets/reviews/ui/sarah-thompson.png",
+		authorPhoto: sarahThompsonPhoto,
 		authorName: "Sarah Thompson",
 		authorLocation: "San Francisco, USA",
 		starsNumber: "4.0",
@@ -17,7 +24,7 @@ const reviewItems: ReviewItem[] = [
 	},
 
 	{
-		authorPhoto: "src/widgets/reviews/ui/raj-patel.png",
+		authorPhoto: rajPatelPhoto,
 		authorName: "Raj Patel",
 		authorLocation: "Mumbai, India",
 		starsNumber: "2.0",
@@ -26,7 +33,7 @@ const reviewItems: ReviewItem[] = [
 	},
 
 	{
-		authorPhoto: "src/widgets/reviews/ui/emily-adams.png",
+		authorPhoto: emilyAdamsPhoto,
 		authorName: "Emily Adams",
 		authorLocation: "London, UK",
 		starsNumber: "3.5",
@@ -35,7 +42,7 @@ const reviewItems: ReviewItem[] = [
 	},
 
 	{
-		authorPhoto: "src/widgets/reviews/ui/alan-jackson.png",
+		authorPhoto: alanJacksonPhoto,
 		authorName: "Alan Jackson",
 		authorLocation: "Houston, USA",
 		starsNumber: "5.0",
@@ -44,7 +51,7 @@ const reviewItems: ReviewItem[] = [
 	},
 
 	{
-		authorPhoto: "src/widgets/reviews/ui/jessica-miller.png",
+		authorPhoto: jessicaMillerPhoto,
 		authorName: "Jessica Miller",
 		authorLocation: "Boston, USA",
 		starsNumber: "4.5",
@@ -53,7 +60,7 @@ const reviewItems: ReviewItem[] = [
 	},
 
 	{
-		authorPhoto: "src/widgets/reviews/ui/diego-lopez.png",
+		authorPhoto: diegoLopezPhoto,
 		authorName: "Diego Lopez",
 		authorLocation: "Barcelona, Spain",
 		starsNumber: "3.0",
